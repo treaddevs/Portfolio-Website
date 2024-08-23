@@ -1,0 +1,119 @@
+:root {
+    --bg-color: #2b2b2b;
+    --font-color: white;
+    --nav-bg-color: #2b2b2b;
+    --toggler-bg-color: #e4e2dd;
+    --toggler-focus-bg-color: #444;
+    --nav-link-hover-color: white;
+    --nav-link-hover-underline: white;
+}
+
+.light-mode {
+    --bg-color: #e4e2dd;
+    --font-color: black;
+    --nav-bg-color: #e4e2dd;
+    --toggler-bg-color: #2b2b2b;
+    --toggler-focus-bg-color: #fff;
+    --nav-link-hover-color: black;
+    --nav-link-hover-underline: black;
+}
+
+html, body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 1px solid white;
+    background-color: var(--nav-bg-color) !important;
+}
+
+.navbar a {
+    color: var(--font-color);
+    position: relative;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:visited {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:visited::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; 
+    height: 3px;
+    margin: 8px 8px;
+    background-color: var(--nav-link-hover-underline);
+}
+
+.navbar.bg-body-tertiary {
+    background-color: #2b2b2b !important;
+}
+
+.navbar-toggler {
+    color: white !important;
+    background-color: var(--toggler-bg-color) !important;
+}
+
+.navbar-toggler:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5); /* Optional: Add a box-shadow if needed */
+    border: 2px solid #fff; /* Maintain or adjust border weight and color on focus */
+    background-color: var(--toggler-focus-bg-color) !important;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#light-dark-mode {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-self: center;
+    border: none;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    margin-right: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode-toggle {
+    display: flex;
+    height: 24px;
+    width: 48px;
+    background-color: white;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+#mode-flip {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.icon {
+    margin: 5px;
+}
+
+.social-icon {
+    margin-right: 5px;
+    margin-left: 5px;
+}
