@@ -9,6 +9,21 @@ let x = 0;
 
 lightDarkMode.addEventListener("click", flip);
 
+function updateIcons() {
+    const linkedinIcon = document.querySelector('a[href*="linkedin"] .social-icon image');
+    const githubIcon = document.querySelector('a[href*="github"] .social-icon image');
+
+    if(linkedinIcon && githubIcon) {
+        if (isDarkMode) {
+            linkedinIcon.setAttribute('href', '/SVG/linkedin-white.svg');
+            githubIcon.setAttribute('href', '/SVG/github-white.svg');
+        } else {
+            linkedinIcon.setAttribute('href', '/SVG/linkedin-black.svg');
+            githubIcon.setAttribute('href', '/SVG/github-black.svg');
+        } 
+    }
+}
+
 function flip() {
     if (rotationInProgress) return;
 
@@ -28,6 +43,9 @@ function flip() {
             rotationInProgress = false;
             currentDegrees = targetDegrees;
             isDarkMode = !isDarkMode;
+            document.body.classList.toggle('light-mode', !isDarkMode);
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            updateIcons();
             return;
         } else {
             if (degrees !== targetDegrees) {

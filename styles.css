@@ -4,8 +4,13 @@
     --nav-bg-color: #2b2b2b;
     --toggler-bg-color: #e4e2dd;
     --toggler-focus-bg-color: #444;
+    --nav-link-color: white;
     --nav-link-hover-color: white;
+    --nav-link-active-color: white;
+    --nav-link-active-hover-color: white;
     --nav-link-hover-underline: white;
+    --social-icon-dark: white;
+    --social-icon-light: black;
 }
 
 .light-mode {
@@ -14,8 +19,28 @@
     --nav-bg-color: #e4e2dd;
     --toggler-bg-color: #2b2b2b;
     --toggler-focus-bg-color: #fff;
+    --nav-link-color: black;
     --nav-link-hover-color: black;
+    --nav-link-active-color: black;
+    --nav-link-active-hover-color: black;
     --nav-link-hover-underline: black;
+    --social-icon-dark: black;
+    --social-icon-light: white;
+}
+
+.dark-mode {
+    --bg-color: #2b2b2b;
+    --font-color: white;
+    --nav-bg-color: #2b2b2b;
+    --toggler-bg-color: #e4e2dd;
+    --toggler-focus-bg-color: #444;
+    --nav-link-color: white;
+    --nav-link-hover-color: white;
+    --nav-link-active-color: white;
+    --nav-link-active-hover-color: white;
+    --nav-link-hover-underline: white;
+    --social-icon-dark: white;
+    --social-icon-light: black;
 }
 
 html, body {
@@ -24,9 +49,17 @@ html, body {
     scroll-behavior: smooth;
 }
 
+.dark-mode .navbar {
+    background-color: #2b2b2b;
+}
+
+.light-mode .navbar {
+        background-color: #e4e2dd;
+}
+
 .navbar {
     font-family: 'Montserrat', sans-serif;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--font-color);
     background-color: var(--nav-bg-color) !important;
 }
 
