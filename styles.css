@@ -80,37 +80,45 @@ html, body {
 
 #light-dark-mode {
     display: flex;
+    position: relative;
+    flex-direction: row;
     background-color: white;
-    align-items: center;
-    justify-self: center;
     border: none;
     border-radius: 50%;
     height: 24px;
     width: 24px;
     padding: 0;
-    margin-right: 25px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .mode-toggle {
     display: flex;
+    flex-direction: row;
     height: 24px;
     width: 48px;
     background-color: white;
+    margin-right: 25px;
+    outline: 1px solid black;
     border-radius: 25px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
 }
 
 #mode-flip {
+    position: absolute;
     display: flex;
+    height: 24px;
+    width: 48px;
     align-items: center;
-    justify-self: center;
+    justify-self: flex-start;
 }
 
-.icon {
-    margin: 5px;
+#mode-icon {
+    position: absolute;
+    width: 24px;
 }
 
 .social-icon {
