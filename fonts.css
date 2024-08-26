@@ -1,22 +1,41 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('Fonts/Montserrat') format('truetype'),
-         url('Fonts/Montserrat-VariableFont_wght.ttf') format('truetype'),
-         url('Fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype'),
+    src: url('Fonts/montserrat-variablefont_wght.ttf') format('truetype'),
+         url('Fonts/montserrat-italic-variablefont_wght.ttf') format('truetype'),
          url('Fonts/montserrat-variablefont_wght-webfont.woff') format('woff'),
          url('Fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
          url('Fonts/montserrat-italic-variablefont_wght-webfont.woff') format('woff'),
-         url('Fonts/montserrat-italic-variablefont_wght-webfont.woff') format('woff2');
+         url('Fonts/montserrat-italic-variablefont_wght-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Lost in South';
-    src: url('Fonts/Lost\ in\ South.ttf') format('truetype'),
-         url('Fonts/lost_in_south-webfont.woff') format('woff'),
-         url('Fonts/lost_in_south-webfont.woff2') format('woff2');
+    font-family: 'Sprite-Graffiti';
+    src: url('Fonts/sprite-graffiti-regular.ttf') format('truetype'),
+         url('Fonts/sprite-graffiti-regular.woff') format('woff'),
+         url('Fonts/sprite-graffiti-regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sprite-Graffiti-Shadow';
+    src: url('Fonts/sprite-graffiti-shadow.ttf') format('truetype'),
+         url('Fonts/sprite-graffiti-shadow.woff') format('woff'),
+         url('Fonts/sprite-graffiti-shadow.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lost-in-South';
+    src: url('Fonts/lost-in-south.ttf') format('truetype'),
+         url('Fonts/lost-in-south-webfont.woff') format('woff'),
+         url('Fonts/lost-in-south-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;   

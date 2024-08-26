@@ -14,33 +14,33 @@
 }
 
 .light-mode {
-    --bg-color: #e4e2dd;
-    --font-color: black;
-    --nav-bg-color: #e4e2dd;
-    --toggler-bg-color: #2b2b2b;
-    --toggler-focus-bg-color: #fff;
-    --nav-link-color: black;
-    --nav-link-hover-color: black;
-    --nav-link-active-color: black;
-    --nav-link-active-hover-color: black;
-    --nav-link-hover-underline: black;
-    --social-icon-dark: black;
-    --social-icon-light: white;
+    --bg-color: #e4e2dd !important;
+    --font-color: black !important;
+    --nav-bg-color: #e4e2dd !important;
+    --toggler-bg-color: #e4e2dd !important;
+    --toggler-focus-bg-color: #444 !important;
+    --nav-link-color: black !important;
+    --nav-link-hover-color: black !important;
+    --nav-link-active-color: black !important;
+    --nav-link-active-hover-color: black !important;
+    --nav-link-hover-underline: black !important;
+    --social-icon-dark: black !important;
+    --social-icon-light: white !important;
 }
 
 .dark-mode {
-    --bg-color: #2b2b2b;
-    --font-color: white;
-    --nav-bg-color: #2b2b2b;
-    --toggler-bg-color: #e4e2dd;
-    --toggler-focus-bg-color: #444;
-    --nav-link-color: white;
-    --nav-link-hover-color: white;
-    --nav-link-active-color: white;
-    --nav-link-active-hover-color: white;
-    --nav-link-hover-underline: white;
-    --social-icon-dark: white;
-    --social-icon-light: black;
+    --bg-color: #2b2b2b !important;
+    --font-color: white !important;
+    --nav-bg-color: #2b2b2b !important;
+    --toggler-bg-color: #e4e2dd !important;
+    --toggler-focus-bg-color: #444 !important;
+    --nav-link-color: white !important;
+    --nav-link-hover-color: white !important;
+    --nav-link-active-color: white !important;
+    --nav-link-active-hover-color: white !important;
+    --nav-link-hover-underline: white !important;
+    --social-icon-dark: white !important;
+    --social-icon-light: black !important;
 }
 
 html, body {
@@ -49,18 +49,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
-.dark-mode .navbar {
-    background-color: #2b2b2b;
-}
-
-.light-mode .navbar {
-        background-color: #e4e2dd;
-}
-
 .navbar {
     font-family: 'Montserrat', sans-serif;
     border-bottom: 1px solid var(--font-color);
-    background-color: var(--nav-bg-color) !important;
+    background-color: var(--nav-bg-color);
 }
 
 .navbar a {
@@ -70,12 +62,12 @@ html, body {
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-    color: white !important;
+    color: var(--nav-link-active-color) !important;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:visited {
-    color: white !important;
+    color: var(--nav-link-hover-color) !important; 
 }
 
 .navbar-nav .nav-link:hover::after,
@@ -91,19 +83,16 @@ html, body {
 }
 
 .navbar.bg-body-tertiary {
-    background-color: #2b2b2b !important;
-}
-
-.navbar-toggler {
-    color: white !important;
-    background-color: var(--toggler-bg-color) !important;
+    background-color: var(--nav-bg-color) !important;
 }
 
 .navbar-toggler:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5); /* Optional: Add a box-shadow if needed */
-    border: 2px solid #fff; /* Maintain or adjust border weight and color on focus */
-    background-color: var(--toggler-focus-bg-color) !important;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+
+.navbar .navbar-toggler:hover {
+    background-color: rgb(125, 125, 125);
 }
 
 .nav-buttons {
@@ -157,4 +146,10 @@ html, body {
 .social-icon {
     margin-right: 5px;
     margin-left: 5px;
+}
+
+@media (max-width: 991.98px) {
+    .d-lg-flex {
+        display: none !important;
+    }
 }
