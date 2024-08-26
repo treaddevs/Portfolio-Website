@@ -94,3 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateIcons();
     updateNavbarToggler();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+    const titleSection = document.querySelector('.title');
+    titleSection.style.height = `calc(100vh - ${navbarHeight}px)`;
+});
