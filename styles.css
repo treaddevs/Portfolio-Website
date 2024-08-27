@@ -2,7 +2,7 @@
     --bg-color: #2b2b2b;
     --font-color: white;
     --nav-bg-color: #2b2b2b;
-    --toggler-bg-color: #e4e2dd;
+    --toggler-bg-color: #e1e1e1;
     --toggler-focus-bg-color: #444;
     --nav-link-color: white;
     --nav-link-hover-color: white;
@@ -14,10 +14,10 @@
 }
 
 .light-mode {
-    --bg-color: #e4e2dd !important;
+    --bg-color: #e1e1e1 !important;
     --font-color: black !important;
-    --nav-bg-color: #e4e2dd !important;
-    --toggler-bg-color: #e4e2dd !important;
+    --nav-bg-color: #e1e1e1 !important;
+    --toggler-bg-color: #e1e1e1 !important;
     --toggler-focus-bg-color: #444 !important;
     --nav-link-color: black !important;
     --nav-link-hover-color: black !important;
@@ -32,7 +32,7 @@
     --bg-color: #2b2b2b !important;
     --font-color: white !important;
     --nav-bg-color: #2b2b2b !important;
-    --toggler-bg-color: #e4e2dd !important;
+    --toggler-bg-color: #e1e1e1 !important;
     --toggler-focus-bg-color: #444 !important;
     --nav-link-color: white !important;
     --nav-link-hover-color: white !important;
@@ -55,15 +55,14 @@ html, body {
     background-color: var(--nav-bg-color);
 }
 
-
 .navbar a {
     color: var(--font-color);
     position: relative;
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link.show {
-    color: var(--nav-link-active-color) !important;
+.navbar-nav .nav-link a {
+    position: relative;
+    display: inline-block;
 }
 
 .navbar-nav .nav-link:hover,
@@ -87,24 +86,29 @@ html, body {
     background-color: var(--nav-bg-color) !important;
 }
 
-.navbar-toggler:focus {
+/* .navbar-toggler:focus {
     outline: none;
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
-}
+} */
 
-.navbar .navbar-toggler:hover {
+/* .navbar .navbar-toggler:hover {
     background-color: rgb(125, 125, 125);
+} */
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-buttons {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    margin-left: auto;
 }
-
-/* .navbar .navbar-collapse {
-    justify-content: flex-start;
-} */
 
 #light-dark-mode {
     display: flex;
@@ -164,24 +168,60 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    background-color: var(--nav-bg-color);
-    color: var(--font-color);
+    background-color: var(--bg-color);
+    background-image: url(Images/topographic-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title h1 {
     font-family: 'Lost-in-South';
     font-size: clamp(6rem, 20vw, 12rem);
+    color: var(--font-color);
     line-height: 0.85;
     text-align: center;
-    text-overflow: ellipsis;
     margin: 0;
     padding: 0;
 }
 
-.title p {
+.title .text-container .text-wrapper p {
     font-family: 'Agrandir-GrandHeavy';
+    color: var(--font-color) !important;
     font-size: 1rem;
     letter-spacing: 2.25px;
+    text-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.text-wrapper p {
+    font-family: 'Agrandir-GrandHeavy';
+    letter-spacing: 2.25px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.title .year p {
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    color: var(--bg-color);
+    background-color: var(--font-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: var(--bg-color);
 }
 
 @media (max-width: 991.98px) {
@@ -191,17 +231,31 @@ html, body {
 }
 
 @media (max-width: 991.98px) {
+    .top-container {
+        flex-direction: row;
+        justify-content: center;
+    }
     .nav-buttons {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         width: 100%;
-        margin-bottom: 10px;
     }
     .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
         flex-direction: column;
+        background-color: var(--bg-color);
     }
     .navbar-nav {
         width: 100%;
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        display: inline-block;
+        width: auto;
         text-align: center;
     }
 }

@@ -11,9 +11,6 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" href="#home">Home</a>
@@ -22,39 +19,52 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </div>
             </div>
-                  <div class="d-flex ms-auto align-items-center nav-buttons">
-                <div class="mode-toggle">
-                    <button id="light-dark-mode" class="btn btn-outline-light">
-                        <div id="mode-flip">     
-                            <svg id="mode-icon" class="icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                <image href="/SVG/dark-mode-svgrepo-com.svg" width="24" height="24" alt="Dark/Light mode"/>
-                            </svg>  
-                        </div>
-                    </button>
+            <div class="top-container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex ms-auto align-items-center nav-buttons">
+                    <div class="mode-toggle">
+                        <button id="light-dark-mode" class="btn btn-outline-light">
+                            <div id="mode-flip">     
+                                <svg id="mode-icon" class="icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="/SVG/dark-mode-svgrepo-com.svg" width="24" height="24" alt="Dark/Light mode"/>
+                                </svg>  
+                            </div>
+                        </button>
+                    </div>
                 </div>
-                <a class="nav-link" href="https://www.linkedin.com/in/sam-treadwell-70b548272/" target="_blank">
-                    <svg class="social-icon" viewBox="0 0 27 27" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-                        <image href="/SVG/linkedin-white.svg" width="27" height="27" alt="LinkedIn logo"/>
-                    </svg>
-                </a>
-                <a class="nav-link" href="https://github.com/treaddevs" target="_blank">
-                    <svg class="social-icon" viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                        <image href="/SVG/github-white.svg" width="32" height="32" alt="GitHub logo"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </nav>
 
     <div class="title">
-        <h1>
-            Sam<br>
-            Treadwell
-        </h1>
-        <p>FRONTEND DEVELOPER & DESIGNER</p>
-        <div class="year">
-            2024
+        <h1>Sam<br>Treadwell</h1>
+        <div class="text-container">
+            <div class="text-wrapper">
+                <p>FRONTEND DEVELOPER</p>
+                <p>UI DESIGNER</p>
+                <p>CREATIVE TECHNOLOGIST</p>
+                <p>CLIMATE TECH ADVOCATE</p>
+            </div>
         </div>
+        
+        <div class="year">
+            <p>2024</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a class="nav-link" href="https://www.linkedin.com/in/sam-treadwell-70b548272/" target="_blank">
+            <svg class="social-icon" viewBox="0 0 27 27" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+                <image href="/SVG/linkedin-white.svg" width="27" height="27" alt="LinkedIn logo"/>
+            </svg>
+        </a>
+        <a class="nav-link" href="https://github.com/treaddevs" target="_blank">
+            <svg class="social-icon" viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                <image href="/SVG/github-white.svg" width="32" height="32" alt="GitHub logo"/>
+            </svg>
+        </a>
     </div>
 
     <section id="home"></section>
@@ -62,7 +72,35 @@
     <section id="about"></section>
     <section id="contact"></section>
 
+    <script>
+        window.onload = function() {
+            const titles = gsap.utils.toArray('.text-wrapper p');
+            const tl = gsap.timeline();
+
+            titles.forEach(title => {
+                const splitTitle = new SplitTextJS(title);
+
+                tl.from(splitTitle.chars, {
+                    opacity: 0,
+                    y: 30,
+                    rotateX: -90,
+                    stagger: 0.03,
+                    duration: 1.85
+                }, "<")
+                .to(splitTitle.chars, {
+                    opacity: 0,
+                    y: -30,
+                    rotateX: 90,
+                    stagger: 0.03,
+                    duration: 1.85
+                }, "<1");
+            });
+        };
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-text-js"></script>
     <script src="./index.js" defer></script>
 </body>
 </html>

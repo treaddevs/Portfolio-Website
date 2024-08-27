@@ -100,3 +100,4 @@ document.addEventListener("DOMContentLoaded", function() {
     const titleSection = document.querySelector('.title');
     titleSection.style.height = `calc(100vh - ${navbarHeight}px)`;
 });
+
