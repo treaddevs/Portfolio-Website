@@ -47,6 +47,7 @@ html, body {
     background-color: var(--bg-color);
     color: var(--font-color);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -85,15 +86,6 @@ html, body {
 .navbar.bg-body-tertiary {
     background-color: var(--nav-bg-color) !important;
 }
-
-/* .navbar-toggler:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
-} */
-
-/* .navbar .navbar-toggler:hover {
-    background-color: rgb(125, 125, 125);
-} */
 
 .top-container {
     display: flex;
@@ -167,16 +159,20 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: var(--bg-color);
-    background-image: url(Images/topographic-background.png);
+    background-image: url(Images/219_generated.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .title h1 {
-    font-family: 'Lost-in-South';
-    font-size: clamp(6rem, 20vw, 12rem);
+    font-family: 'Graphik Arts';
+    /* font-size: clamp(6rem, 20vw, 12rem); */
+    font-size: 8rem;
     color: var(--font-color);
     line-height: 0.85;
     text-align: center;
@@ -220,6 +216,76 @@ html, body {
     text-decoration: none;
 }
 
+.portfolio {
+    display: flex;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Agrandir-GrandHeavy';
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.work-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.work-nav p {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.portfolio .work-nav p:hover::after,
+.portfolio .work-nav p:visited::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    height: 3px;
+    width: 100%;
+    background-color: var(--nav-link-hover-underline); 
+    left: 0;
+}
+
+.sub-section {
+    display: none; 
+    position: absolute; 
+    left: 50%;
+    width: 60%; 
+    max-width: 1200px;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    padding: 10px;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+.sub-section p {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.sub-section p:hover::after,
+.sub-section p:visited::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    height: 3px;
+    width: 100%;
+    background-color: var(--nav-link-hover-underline); 
+    left: 0;  
+}
+
 .footer {
     background-color: var(--bg-color);
 }
@@ -257,5 +323,39 @@ html, body {
         display: inline-block;
         width: auto;
         text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        height: auto;
+        min-height: auto;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio {
+        padding: 0;
+    }
+    .portfolio .work-nav {
+        display: flex;
+        align-items: center;
+        width: 85%;
+    }
+    .portfolio .work-nav p {
+        font-size: 0.85rem;
+        width: 55%;
+        margin: 5px;
+    }
+    .sub-section {
+        display: flex;
+        align-items: center;
+        width: 85%;
+    }
+    .sub-section p {
+        font-size: 0.85rem;
+        width: 55%;
+        margin: 5px;
     }
 }

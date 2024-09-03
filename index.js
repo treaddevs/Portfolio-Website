@@ -9,6 +9,7 @@ let x = 0;
 
 lightDarkMode.addEventListener("click", flip);
 
+// Update social profile icon links
 function updateIcons() {
     const linkedinIcon = document.querySelector('a[href*="linkedin"] .social-icon image');
     const githubIcon = document.querySelector('a[href*="github"] .social-icon image');
@@ -24,6 +25,7 @@ function updateIcons() {
     }
 }
 
+// Flip dark/light mode icon
 function flip() {
     if (rotationInProgress) return;
 
@@ -67,24 +69,26 @@ function flip() {
     }
 }
 
+// Update document for light/dark mode
 function updateNavbarToggler() {
     const navbar = document.querySelector('.navbar');
     const navbarToggler = document.querySelector('.navbar-toggler');
 
-    console.log('Updating navbar toggler');
-    console.log('isDarkMode:', isDarkMode);
+    // console.log('Updating navbar toggler');
+    // console.log('isDarkMode:', isDarkMode);
 
     if (navbar) {
         navbar.style.backgroundColor = 'var(--nav-bg-color)';
-        console.log('Navbar background color:', getComputedStyle(navbar).backgroundColor);
+        // console.log('Navbar background color:', getComputedStyle(navbar).backgroundColor);
     }
 
     if (navbarToggler) {
         navbarToggler.style.backgroundColor = 'var(--toggler-bg-color)';
-        console.log('Navbar toggler background color:', getComputedStyle(navbarToggler).backgroundColor);
+        // console.log('Navbar toggler background color:', getComputedStyle(navbarToggler).backgroundColor);
     }
 }
 
+// Update DOM for light/dark mode
 document.addEventListener('DOMContentLoaded', () => {
     if (isDarkMode) {
         document.documentElement.classList.add('dark-mode');
@@ -95,9 +99,43 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavbarToggler();
 });
 
+// Update DOM for light/dark mode
 document.addEventListener("DOMContentLoaded", function() {
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
     const titleSection = document.querySelector('.title');
     titleSection.style.height = `calc(100vh - ${navbarHeight}px)`;
 });
 
+// Update DOM for section/sub-section selection
+document.addEventListener('DOMContentLoaded', () => {
+    const devNav = document.getElementById('dev-nav');
+    const designNav = document.getElementById('design-nav');
+    const arcadeNav = document.getElementById('arcade-nav');
+
+    const devSection = document.getElementById('dev-section');
+    const designSection = document.getElementById('design-section');
+    const arcadeSection = document.getElementById('arcade-section');
+
+    function hideAllSections() {
+        devSection.style.display = 'none';
+        designSection.style.display = 'none';
+        arcadeSection.style.display = 'none';
+    }
+
+    devNav.addEventListener('click', () => {
+        hideAllSections();
+        devSection.style.display = 'flex';
+    });
+
+    designNav.addEventListener('click', () => {
+        hideAllSections();
+        designSection.style.display = 'flex';
+    });
+
+    arcadeNav.addEventListener('click', () => {
+        hideAllSections();
+        arcadeSection.style.display = 'flex';
+    });
+
+    hideAllSections();
+})

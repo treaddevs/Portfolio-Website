@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Treadwell | Frontend Developer & Designer</title>
+    <title>Sam Treadwell's Portfolio</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./fonts.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -26,7 +26,7 @@
                 <div class="d-flex ms-auto align-items-center nav-buttons">
                     <div class="mode-toggle">
                         <button id="light-dark-mode" class="btn btn-outline-light">
-                            <div id="mode-flip">     
+                            <div id="mode-flip">
                                 <svg id="mode-icon" class="icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                     <image href="/SVG/dark-mode-svgrepo-com.svg" width="24" height="24" alt="Dark/Light mode"/>
                                 </svg>  
@@ -39,7 +39,7 @@
     </nav>
 
     <div class="title">
-        <h1>Sam<br>Treadwell</h1>
+        <h1>SAM<br>TREADWELL</h1>
         <div class="text-container">
             <div class="text-wrapper">
                 <p>FRONTEND DEVELOPER</p>
@@ -54,6 +54,38 @@
         </div>
     </div>
 
+    <div class="portfolio">
+        <div class="work-nav">
+            <p id="dev-nav">Development</p>
+            <p id="design-nav">Design</p>
+            <p id="arcade-nav">Arcade</p>
+        </div>
+        <div class="sub-section" id="dev-section">
+            <p>Web</p>
+            <p>Applications</p>
+            <p>Systems</p>
+        </div>
+        <div class="sub-section" id="design-section">
+            <p>UI Design</p>
+            <p>Graphic Design</p>
+        </div>
+        <div class="sub-section" id="arcade-section">
+            <p>JavaScript Games</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="content-overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">x</span>
+            <p id="overlay-text">Content</p>
+        </div>
+    </div>
+
+    <section id="home"></section>
+    <section id="portfolio"></section>
+    <section id="about"></section>
+    <section id="contact"></section>
+
     <div class="footer">
         <a class="nav-link" href="https://www.linkedin.com/in/sam-treadwell-70b548272/" target="_blank">
             <svg class="social-icon" viewBox="0 0 27 27" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
@@ -66,11 +98,6 @@
             </svg>
         </a>
     </div>
-
-    <section id="home"></section>
-    <section id="portfolio"></section>
-    <section id="about"></section>
-    <section id="contact"></section>
 
     <script>
         window.onload = function() {
