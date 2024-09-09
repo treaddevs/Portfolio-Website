@@ -40,7 +40,7 @@
 
     <div class="title">
         <h1>SAM<br>TREADWELL</h1>
-        <div class="text-container">
+        <div class="skills-container">
             <div class="text-wrapper">
                 <p>FRONTEND DEVELOPER</p>
                 <p>UI DESIGNER</p>
@@ -56,35 +56,28 @@
 
     <div class="portfolio">
         <div class="work-nav">
-            <p id="dev-nav">Development</p>
-            <p id="design-nav">Design</p>
-            <p id="arcade-nav">Arcade</p>
-        </div>
-        <div class="sub-section" id="dev-section">
-            <p>Web</p>
-            <p>Applications</p>
-            <p>Systems</p>
-        </div>
-        <div class="sub-section" id="design-section">
-            <p>UI Design</p>
-            <p>Graphic Design</p>
-        </div>
-        <div class="sub-section" id="arcade-section">
-            <p>JavaScript Games</p>
-        </div>
-    </div>
+            
+            <div id="nav-pill" class="active-pill"></div>
 
+            <div id="dev-nav" class="nav-item active" onclick="activateSection('dev')">
+                <p>Development</p>
+            </div>
+            <div id="design-nav" class="nav-item" onclick="activateSection('design')">
+                <p>Design</p>
+            </div>
+            <div id="arcade-nav" class="nav-item" onclick="activateSection('arcade')">
+                <p>Arcade</p>
+            </div>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+    </div>
+    
     <div class="overlay" id="content-overlay">
         <div class="overlay-content">
             <span class="close-btn" onclick="closeOverlay()">x</span>
-            <p id="overlay-text">Content</p>
+            <div id="overlay-text"></div>
         </div>
     </div>
-
-    <section id="home"></section>
-    <section id="portfolio"></section>
-    <section id="about"></section>
-    <section id="contact"></section>
 
     <div class="footer">
         <a class="nav-link" href="https://www.linkedin.com/in/sam-treadwell-70b548272/" target="_blank">

@@ -106,36 +106,100 @@ document.addEventListener("DOMContentLoaded", function() {
     titleSection.style.height = `calc(100vh - ${navbarHeight}px)`;
 });
 
-// Update DOM for section/sub-section selection
-document.addEventListener('DOMContentLoaded', () => {
-    const devNav = document.getElementById('dev-nav');
-    const designNav = document.getElementById('design-nav');
-    const arcadeNav = document.getElementById('arcade-nav');
+function activateSection(section) {
+    // Get the active pill element
+    const activePill = document.getElementById('nav-pill');
+    const targetNav = document.getElementById(`${section}-nav`);
 
-    const devSection = document.getElementById('dev-section');
-    const designSection = document.getElementById('design-section');
-    const arcadeSection = document.getElementById('arcade-section');
+    // Calculate the position and size of the clicked nav item
+    const targetRect = targetNav.getBoundingClientRect();
+    const containerRect = document.querySelector('.work-nav').getBoundingClientRect();
+    const leftOffset = targetRect.left - containerRect.left;
 
-    function hideAllSections() {
-        devSection.style.display = 'none';
-        designSection.style.display = 'none';
-        arcadeSection.style.display = 'none';
+    // Move the active pill to the new position with smooth transition
+    activePill.style.left = `${leftOffset}px`;
+    activePill.style.width = `${targetRect.width}px`;
+
+    // Clear existing active states
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    targetNav.classList.add('active');
+
+    // Update the grid with the relevant projects for the active section
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = ''; // Clear existing projects
+
+    let projects = [];
+    if (section === 'dev') {
+        projects = [
+            { title: 'Development Project 1', category: 'Web Development', imgURL: '', details: 'Details of Development Project 1' },
+            { title: 'Development Project 2', category: 'Web Development',  imgURL: '', details: 'Details of Development Project 2' },
+            { title: 'Development Project 3',  category: 'Web Development', imgURL: '', details: 'Details of Development Project 3' },
+            { title: 'Development Project 4',  category: 'Web Development', imgURL: '', details: 'Details of Development Project 4' }
+        ];
+    } else if (section === 'design') {
+        projects = [
+            { title: 'Design Project 1', category: 'Web Development', imgURL: '', details: 'Details of Design Project 1' },
+            { title: 'Design Project 2', category: 'Web Development', imgURL: '',details: 'Details of Design Project 2' }
+        ];
+    } else if (section === 'arcade') {
+        projects = [
+            { title: 'Arcade Project 1', category: 'Web Development', imgURL: '', details: 'Details of Arcade Project 1' }
+        ];
     }
 
-    devNav.addEventListener('click', () => {
-        hideAllSections();
-        devSection.style.display = 'flex';
-    });
+    projects.forEach(project => {
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
 
-    designNav.addEventListener('click', () => {
-        hideAllSections();
-        designSection.style.display = 'flex';
+        projectItem.innerHTML = `
+            <div class="project-card">
+                <img src="${project.imgURL}" alt="${project.title}" class="project-image">
+                <div class="prject-footer">
+                    <span class="project-category">${project.category}</span>
+                    <h3 class="project-title">${project.title}</h3>
+                </div>
+            </div>
+        `;
+        projectItem.onclick = () => showOverlay(project.details);
+        grid.appendChild(projectItem);
     });
+}
 
-    arcadeNav.addEventListener('click', () => {
-        hideAllSections();
-        arcadeSection.style.display = 'flex';
-    });
+// Activate 'Development' section by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    activateSection('dev');
+});
 
-    hideAllSections();
-})
+function showOverlay(projectDetails) {
+    // Set overlay content
+    const overlayText = document.getElementById('overlay-text');
+    overlayText.innerHTML = `<p>${projectDetails}</p>`;
+
+    // Display the overlay
+    const overlay = document.getElementById('content-overlay');
+    overlay.style.display = 'flex';
+}
+
+function closeOverlay() {
+    // Hide the overlay
+    const overlay = document.getElementById('content-overlay');
+    overlay.style.display = 'none';
+}
+
+function showOverlay(sectionName) {
+    const overlayText = document.getElementById('overlay-text');
+    overlayText.textContent = `${sectionName} Content`;
+
+    const overlay = document.getElementById('content-overlay');
+    overlay.style.display = 'flex'; 
+
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => item.classList.remove('active')); 
+    document.getElementById(`${sectionName.toLowerCase()}-nav`).classList.add('active'); 
+}
+
+function closeOverlay() {
+    const overlay = document.getElementById('content-overlay');
+    overlay.style.display = 'none';
+}
+
