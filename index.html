@@ -28,7 +28,7 @@
                         <button id="light-dark-mode" class="btn btn-outline-light">
                             <div id="mode-flip">
                                 <svg id="mode-icon" class="icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                    <image href="/SVG/dark-mode-svgrepo-com.svg" width="24" height="24" alt="Dark/Light mode"/>
+                                    <image href="./SVG/dark-mode-svgrepo-com.svg" width="24" height="24" alt="Dark/Light mode"/>
                                 </svg>  
                             </div>
                         </button>
@@ -49,9 +49,7 @@
             </div>
         </div>
         
-        <div class="year">
-            <p>2024</p>
-        </div>
+        <div class="year" id="year"></div>
     </div>
 
     <div class="portfolio">
@@ -74,7 +72,9 @@
     
     <div class="overlay" id="content-overlay">
         <div class="overlay-content">
-            <span class="close-btn" onclick="closeOverlay()">x</span>
+            <div class="close-btn">
+                <span class="x" onclick="closeOverlay()">X</span>     
+            </div>
             <div id="overlay-text"></div>
         </div>
     </div>
@@ -82,12 +82,12 @@
     <div class="footer">
         <a class="nav-link" href="https://www.linkedin.com/in/sam-treadwell-70b548272/" target="_blank">
             <svg class="social-icon" viewBox="0 0 27 27" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-                <image href="/SVG/linkedin-white.svg" width="27" height="27" alt="LinkedIn logo"/>
+                <image href="./SVG/linkedin-white.svg" width="27" height="27" alt="LinkedIn logo"/>
             </svg>
         </a>
         <a class="nav-link" href="https://github.com/treaddevs" target="_blank">
             <svg class="social-icon" viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                <image href="/SVG/github-white.svg" width="32" height="32" alt="GitHub logo"/>
+                <image href="./SVG/github-white.svg" width="32" height="32" alt="GitHub logo"/>
             </svg>
         </a>
     </div>
