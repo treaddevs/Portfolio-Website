@@ -1,3 +1,5 @@
+import { projects } from './projects.js';
+
 // Set the current year in the year element
 const year = document.getElementById("year");
 const date = new Date();
@@ -107,10 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Activate a section and update the projects grid
-function activateSection(section) {
+window.activateSection = function (section) {
     setTimeout(() => {
         const activePill = document.getElementById('nav-pill');
         const targetNav = document.getElementById(`${section}-nav`);
+
+        if (!activePill || !targetNav) {
+            console.error('Missing nav-pill or target-nav element');
+            return;
+        }
 
         const targetRect = targetNav.getBoundingClientRect();
         const containerRect = document.querySelector('.work-nav').getBoundingClientRect();
@@ -119,32 +126,17 @@ function activateSection(section) {
         activePill.style.left = `${leftOffset}px`;
         activePill.style.width = `${targetRect.width}px`;
 
+        // Update active class
         document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
         targetNav.classList.add('active');
 
+        // Update projects grid
         const grid = document.getElementById('projects-grid');
         grid.innerHTML = '';
 
-        let projects = [];
-        if (section === 'dev') {
-            projects = [
-                { title: 'City of Portland', category: 'Web Development', imgURL: './Images/Portland-logo.jpg', details: 'Details of Development Project 1' },
-                { title: 'The VIA Agency', category: 'Web Development', imgURL: './Images/VIA-logo.jpg', details: 'Details of Development Project 2' },
-                { title: 'Fusion F1', category: 'Web Development', imgURL: './Images/F1.png', details: 'Details of Development Project 3' },
-                { title: 'Pizza Ordering System', category: 'Desktop Application', imgURL: './Images/Brickyard-Hollow-Logo.jpg', details: 'Details of Development Project 4' }
-            ];
-        } else if (section === 'design') {
-            projects = [
-                { title: 'Design Project 1', category: 'Web Development', imgURL: '', details: 'Details of Design Project 1' },
-                { title: 'Design Project 2', category: 'Web Development', imgURL: '', details: 'Details of Design Project 2' }
-            ];
-        } else if (section === 'arcade') {
-            projects = [
-                { title: 'Arcade Project 1', category: 'Web Development', imgURL: '', details: 'Details of Arcade Project 1' }
-            ];
-        }
+        let projectsList = projects[section] || [];
 
-        projects.forEach(project => {
+        projectsList.forEach(project => {
             const projectItem = document.createElement('div');
             projectItem.className = 'project-item';
 
@@ -157,32 +149,29 @@ function activateSection(section) {
                     </div>
                 </div>
             `;
-            projectItem.onclick = () => showOverlay(project.details);
+            projectItem.onclick = () => showOverlay(project);
             grid.appendChild(projectItem);
         });
     }, 100);
-}
+};
 
 // Show overlay with content
-function showOverlay(content, isProject = true) {
+window.showOverlay = function (project) {
     const overlayText = document.getElementById('overlay-text');
     const overlay = document.getElementById('content-overlay');
 
-    if (isProject) {
-        overlayText.innerHTML = `<p>${content}</p>`;
-    } else {
-        overlayText.textContent = `${content} Content`;
-
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => item.classList.remove('active'));
-        document.getElementById(`${content.toLowerCase()}-nav`).classList.add('active');
-    }
+    overlayText.innerHTML = `
+        <h2>${project.title}</h2>
+        <p><strong>Category:</strong> ${project.category}</p>
+        <p><strong>Description:</strong> ${project.details}</p>
+        ${project.imgURL ? `<img src="${project.imgURL}" alt="${project.title}" class="overlay-image">` : ''}
+    `;
 
     overlay.style.display = 'flex';
-}
+};
 
 // Close the overlay
-function closeOverlay() {
+window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
     overlay.style.display = 'none';
-}
+};
