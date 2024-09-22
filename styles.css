@@ -540,6 +540,7 @@ body.overlay-open {
     font-family: 'Agrandir-GrandHeavy';
     color: var(--font-color);
     margin: 0 0 40px 40px;
+    text-align: left;
 }
 
 .icons-container {
@@ -562,7 +563,7 @@ body.overlay-open {
 }
 
 .overlay-additional-image {
-    height: 500px;
+    max-height: 500px;
     width: auto;
 }
 
@@ -582,6 +583,7 @@ body.overlay-open {
     flex-direction: column;
     gap: 20px;
     width: 90vw;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -589,17 +591,22 @@ body.overlay-open {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    overflow: hidden;
 }
 
 .top-images-container img {
     flex: 1;
-    object-fit: contain;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .bottom-container {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    margin-bottom: 50px;
 }
 
 .bottom-container img {
@@ -632,11 +639,19 @@ body.overlay-open {
     .title h1 {
         font-size: 8rem;
     }
+    .overlay-additional-image {
+        max-height: 400px;
+        max-width: auto;
+    }
 }
 
 @media (max-width: 1200px) {
     .title h1 {
         font-size: 6rem;
+    }
+    .overlay-additional-image {
+        max-height: 300px;
+        width: auto;
     }
 }
 
@@ -719,17 +734,77 @@ body.overlay-open {
         left: 0;
         width: 110%
     }
+    .project-icon {
+        height: 40px;
+        width: auto;
+    }
+    #subtext {
+        margin-left: 40px;
+    }
+    .overlay-additional-image {
+        max-height: 200px;
+        width: auto;
+    }
 }
 
 @media (max-width: 750px) {
     .title h1 {
         font-size: 4rem;
     }
+    .role {
+        font-size: 1.5rem;
+    }
+    .second-category {
+        font-size: 1.5rem;
+    }
+    #subtext {
+        font-size: 1.25rem;
+    }
+    .date {
+        font-size: 1.5rem;
+    }
+    .project {
+        font-size: 1.5rem;
+    }
+    .overlay-additional-image {
+        max-height: 150px;
+        width: auto;
+    }
+    .bottom-container .overlay-additional-image {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
     .title h1 {
         font-size: 2.85rem;
+    }
+    .role {
+        font-size: 1rem;
+    }
+    .second-category {
+        font-size: 1rem;
+    }
+    #subtext {
+        font-size: 1rem;
+    }
+    .date {
+        font-size: 0.75rem;
+    }
+    .project {
+        font-size: 0.95rem;
+    }
+    .project-icon {
+        height: 30px;
+        width: auto;
+    }
+    .details {
+        font-size: 0.85rem;
+    }
+    .image-text {
+        font-size: 0.85rem;
+        padding: 0;
+        margin: 20px 0 0 0;
     }
 }
 

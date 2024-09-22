@@ -54,6 +54,11 @@ export const projects = {
                 { url: './Images/Receipt1.png', alt: "Receipt 1" },
                 { url: './Images/Receipt2.png', alt: "Receipt 2"},
             ], 
+            icons: [
+                { url: './Icons/Java.png', link: 'https://www.java.com/en/' },
+            ],
+            role: "Object-Oriented Design Project",
+            date: "July 2023",
             details: 'Details of Development Project 4' 
         }
     ],
