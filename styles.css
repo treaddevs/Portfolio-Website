@@ -348,10 +348,6 @@ html, body {
     object-fit: cover;
 }
 
-/* .project-image::after {
-    content: none;
-} */
-
 .project-footer {
     padding: 10px;
     text-align: center;
@@ -625,6 +621,12 @@ body.overlay-open {
     font-family: 'Montserrat';
 }
 
+#carouselExampleIndicators {
+    max-width: 850px;
+    height: auto;
+    margin-bottom: 50px;
+}
+
 .footer {
     background-color: var(--bg-color);
 }
@@ -736,6 +738,10 @@ body.overlay-open {
     }
     .project-icon {
         height: 40px;
+        width: auto;
+    }
+    .java-icon {
+        height: 50px;
         width: auto;
     }
     #subtext {

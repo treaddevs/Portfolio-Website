@@ -1,4 +1,4 @@
-window.showOverlay = function (project) {
+window.showVIAOverlay = function (project) {
     // Get all necessary elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');

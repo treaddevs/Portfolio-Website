@@ -1,19 +1,19 @@
-window.showBrickyardOverlay = function (project) {
-    // Get all necessary elements by their IDs
+window.showF1Overlay = function (project) {
+    // Get the necessary overlay elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
 
-    // Clear previous images and text in the overlay container
+    // Clear any previous content in the overlay container
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
 
     // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the main image if it exists
+    // Display the main image if available
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -21,7 +21,7 @@ window.showBrickyardOverlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    // Set the text content including role, date, and details
+    // Set the HTML structure for the overlay content
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -30,18 +30,19 @@ window.showBrickyardOverlay = function (project) {
         <div class="subheading">
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
-                ${project.title === 'Pizza Ordering System' && project.icons.length > 0 ?
-                    `<a href="${project.icons[0].link}" target="_blank" rel="noopener noreferrer">
-                        <img src="${project.icons[0].url}" alt="Icon" class="java-icon" width="auto" height="75px">
-                    </a>`
+                ${project.title === 'Fusion F1' ?
+                    project.icons.slice(0, 4).map((icon) => `
+                        <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
+                            <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="50px">
+                        </a>
+                    `).join('')
                 : ''}
             </div>
         </div>
         <p class="details">${project.details}</p>
-        <p class="details">${project.details2}</p>
     `;
 
-    // Create the Bootstrap carousel for additional images
+    // Optionally, create a Bootstrap carousel for additional images if needed
     const carouselContainer = document.createElement('div');
     carouselContainer.id = 'carouselExampleIndicators';
     carouselContainer.className = 'carousel slide';
@@ -53,14 +54,13 @@ window.showBrickyardOverlay = function (project) {
     const innerCarousel = document.createElement('div');
     innerCarousel.className = 'carousel-inner';
 
-    // Loop through images starting from index 1 to omit the first image
+    // Loop through additional images starting from index 1 if necessary
     project.images.slice(1).forEach((image, index) => {
-        // Create indicator buttons
         const button = document.createElement('button');
         button.type = 'button';
         button.setAttribute('data-bs-target', '#carouselExampleIndicators');
         button.setAttribute('data-bs-slide-to', index.toString());
-        button.setAttribute('aria-label', `Slide ${index + 2}`); // Adjust slide number
+        button.setAttribute('aria-label', `Slide ${index + 2}`);
 
         if (index === 0) {
             button.classList.add('active');
@@ -68,7 +68,6 @@ window.showBrickyardOverlay = function (project) {
         }
         indicators.appendChild(button);
 
-        // Create carousel items
         const item = document.createElement('div');
         item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
 
@@ -81,11 +80,11 @@ window.showBrickyardOverlay = function (project) {
         innerCarousel.appendChild(item);
     });
 
-    // Append indicators and inner carousel to the container
+    // Append indicators and carousel items to the carousel container
     carouselContainer.appendChild(indicators);
     carouselContainer.appendChild(innerCarousel);
 
-    // Add control buttons
+    // Add carousel control buttons
     const prevButton = document.createElement('button');
     prevButton.className = 'carousel-control-prev';
     prevButton.type = 'button';
@@ -109,7 +108,7 @@ window.showBrickyardOverlay = function (project) {
     carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
 
-    // Append the entire carousel to the overlay images container
+    // Append the entire carousel to the overlay images container if necessary
     overlayImagesContainer.appendChild(carouselContainer);
 
     // Show the overlay
@@ -117,7 +116,7 @@ window.showBrickyardOverlay = function (project) {
     document.body.classList.add('overlay-open');
 };
 
-// Close the overlay function
+// Function to close the overlay
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
     if (overlay) {

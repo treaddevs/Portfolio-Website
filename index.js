@@ -154,7 +154,15 @@ window.activateSection = function (section) {
                     </div>
                 </div>
             `;
-            projectItem.onclick = () => showOverlay(project);
+            projectItem.onclick = () => {
+                if (project.title === 'Pizza Ordering System') {
+                    window.showBrickyardOverlay(project);
+                } else if (project.title === 'The VIA Agency') {
+                    window.showVIAOverlay(project);
+                } else if (project.title === 'Fusion F1') {
+                    window.showF1Overlay(project);
+                }
+            };
             grid.appendChild(projectItem);
         });
     }, 100);

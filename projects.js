@@ -40,7 +40,21 @@ export const projects = {
             category: 'Web Development', 
             fullScreenImage: './Images/F1-Deezen.jpg',
             images: './Images/Formula1.jpg', 
-            details: 'Details of Development Project 3' 
+            details: 'Details of Development Project 3',
+            images: [
+                { url: './Images/Formula1.jpg' }
+            ],
+            icons: [
+                { url: './Icons/HTML.png', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+                { url: './Icons/CSS.png', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+                { url: './Icons/JS.png', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+                { url: './Icons/Bootstrap.png', link: 'https://getbootstrap.com/' }
+            ],
+            role: 'Vanilla Code Web Development',
+            date: '(Spring/Summer 2024)',
+            details: 'Being the first website I built from the ground up my goal was to reimagine and redesign an existing brands website. Captivated by the intensity of the Netflix series <a href="https://www.imdb.com/title/tt8289930/"><em>Formula 1: Drive to Survive</em></a>, I decided to start with F1 for its global influence, international innovation, acceptance of use for educational purposes, asset/font availability, and presence of public APIs.',
+            details2: 'I decided to use a dark theme because white text is easier to read on a dark background and chose to embed engaging components. I also used motion and color in the background color splash theme since F1 is flashy and explosive. Colors were also coordinated in the navbar where the text for each drivers name matches their team color, as well as the date elements connected to the timeline on the teams pages.',
+            details3: 'The project includes interactive components such as the race schedule accordion with cards, shuffling concept car carousel, 3D Sketchfab model iframe embed, hover effects, and more.',
         },
         { 
             title: 'Pizza Ordering System', 
@@ -50,16 +64,17 @@ export const projects = {
                 { url: './Images/Brickyard-Hollow-Dark.jpg', alt: "Brickyard Hollow Dark logo" },
                 { url: './Images/Order.png', alt: "Order Pizza start screen" },
                 { url: './Images/Menu.png', alt: "Order Pizza from Menu" },
-                { url: './Images/BYO.png', alt: "Build-your-own pizza" },
                 { url: './Images/Receipt1.png', alt: "Receipt 1" },
+                { url: './Images/BYO.png', alt: "Build-your-own pizza" },
                 { url: './Images/Receipt2.png', alt: "Receipt 2"},
             ], 
             icons: [
                 { url: './Icons/Java.png', link: 'https://www.java.com/en/' },
             ],
-            role: "Object-Oriented Design Project",
-            date: "July 2023",
-            details: 'Details of Development Project 4' 
+            role: "Java Object-Oriented Design Project",
+            date: "(Summer 2023)",
+            details: 'During the summer of 2023 I was working a job as a line chef at a local pizza shop a few blocks from my campus while taking Object-Oriented Design (CS 5004) at the Roux Institute at Northeastern University. For the final project I decided to expand on my mid-semester project of developing a pizza ordering system for the restaurant. I chose to use the <a href="https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html">Swing</a> GUI widget toolkit for Java. I structured the system using the model-view-controller (MVC) architecture. I stored pizza toppings as a custom enum data type with corresponding arrays for associated small and large toppings prices.',
+            details2: '<a href="https://github.com/treaddevs/Pizza-App-GUI">View project on GitHub</a>'
         }
     ],
     design: [
