@@ -52,7 +52,7 @@ export const projects = {
             ],
             role: 'Vanilla Code Web Development',
             date: '(Spring/Summer 2024)',
-            details: 'Being the first website I built from the ground up my goal was to reimagine and redesign an existing brands website. Captivated by the intensity of the Netflix series <a href="https://www.imdb.com/title/tt8289930/"><em>Formula 1: Drive to Survive</em></a>, I decided to start with F1 for its global influence, international innovation, acceptance of use for educational purposes, asset/font availability, and presence of public APIs.',
+            details: 'Being the first website I built from the ground up my goal was to reimagine and redesign the website of an existing brand. Captivated by the intensity of the Netflix series <a href="https://www.imdb.com/title/tt8289930/"><em>Formula 1: Drive to Survive</em></a>, I decided to start with F1 for its global influence, international innovation, acceptance of use for educational purposes, asset/font availability, and presence of public APIs.',
             details2: 'I decided to use a dark theme because white text is easier to read on a dark background and chose to embed engaging components. I also used motion and color in the background color splash theme since F1 is flashy and explosive. Colors were also coordinated in the navbar where the text for each drivers name matches their team color, as well as the date elements connected to the timeline on the teams pages.',
             details3: 'The project includes interactive components such as the race schedule accordion with cards, shuffling concept car carousel, 3D Sketchfab model iframe embed, hover effects, and more.',
         },

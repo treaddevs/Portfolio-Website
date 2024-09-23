@@ -1,4 +1,20 @@
 window.showVIAOverlay = function (project) {
+    function loadBotpressWebchat() {
+        // Load the Botpress webchat inject script
+        const injectScript = document.createElement('script');
+        injectScript.src = "https://cdn.botpress.cloud/webchat/v2.1/inject.js";
+        injectScript.onload = () => {
+            // Load the configuration script after the inject script has loaded
+            const configScript = document.createElement('script');
+            configScript.src = "https://mediafiles.botpress.cloud/7686e2be-d35c-4bf3-9470-5c5c02904ea4/webchat/v2.1/config.js";
+            document.body.appendChild(configScript);
+        };
+        document.body.appendChild(injectScript);
+    }
+    
+    // Call this function when you want to load the webchat
+    loadBotpressWebchat();
+
     // Get all necessary elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
@@ -160,5 +176,12 @@ window.closeOverlay = function () {
     if (overlay) {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
+
+        // Hide the Botpress webchat container
+        const bpContainer = document.querySelector('.bpContainer');
+        if (bpContainer) {
+            bpContainer.style.display = 'none'; 
+            bpContainer.remove(); 
+        }
     }
 };

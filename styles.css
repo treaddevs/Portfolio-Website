@@ -627,6 +627,13 @@ body.overlay-open {
     margin-bottom: 50px;
 }
 
+/* #fab-root,
+.bpFabContainer,
+.bpFabIcon {
+    display: none !important;
+    visibility: hidden !important;
+} */
+
 .footer {
     background-color: var(--bg-color);
 }
