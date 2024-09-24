@@ -11,7 +11,7 @@ window.showVIAOverlay = function (project) {
         };
         document.body.appendChild(injectScript);
     }
-    
+
     // Call this function when you want to load the webchat
     loadBotpressWebchat();
 
@@ -52,11 +52,11 @@ window.showVIAOverlay = function (project) {
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px">
                         </a>
                     `).join('')
-                : ''}
+            : ''}
             </div>
         </div>
         <p class="details">${project.details}</p>
-        ${project.embedUrl ? `<div class="embed-container"><embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh"></div>` : ''}
+        ${project.embedUrl ? `<div class="via-embed-container"><embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh"></div>` : ''}
         <p class="details">${project.details2}</p>
     `;
 
@@ -88,7 +88,7 @@ window.showVIAOverlay = function (project) {
             <h4 class="second-category">${project.secondCategory}</h4>
             <div class="icons-container">
                 ${project.title === 'The VIA Agency' ?
-                    project.icons.slice(5).map((icon) => `
+                project.icons.slice(5).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px" style="border-radius: 50px;">
                         </a>
@@ -180,8 +180,8 @@ window.closeOverlay = function () {
         // Hide the Botpress webchat container
         const bpContainer = document.querySelector('.bpContainer');
         if (bpContainer) {
-            bpContainer.style.display = 'none'; 
-            bpContainer.remove(); 
+            bpContainer.style.display = 'none';
+            bpContainer.remove();
         }
     }
 };

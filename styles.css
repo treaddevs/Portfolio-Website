@@ -627,6 +627,11 @@ body.overlay-open {
     margin-bottom: 50px;
 }
 
+#fallback-image-container {
+    display: none;
+    margin: 0 20px;
+}
+
 /* #fab-root,
 .bpFabContainer,
 .bpFabIcon {
@@ -757,6 +762,12 @@ body.overlay-open {
     .overlay-additional-image {
         max-height: 200px;
         width: auto;
+    }
+    .f1-embed-container {
+        display: none;
+    }
+    #fallback-image-container {
+        display: block;
     }
 }
 

@@ -5,10 +5,13 @@ window.showF1Overlay = function (project) {
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
+    const embedContainer = document.getElementById('embed-element');
+    const fallbackImageContainer = document.getElementById('fallback-image-container');
 
     // Clear any previous content in the overlay container
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
+    fallbackImageContainer.innerHTML = '';
 
     // Set the title of the overlay
     overlayTitle.textContent = project.title;
@@ -40,76 +43,27 @@ window.showF1Overlay = function (project) {
             </div>
         </div>
         <p class="details">${project.details}</p>
+        ${project.embedUrl ? `<div class="f1-embed-container"><embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh"></div>` : ''}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        <div class="f1-embed-container" style="display: none";>
+            <embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh">
+        </div>
+        <div id="fallback-image-container"></div>
     `;
 
-    // Optionally, create a Bootstrap carousel for additional images if needed
-    const carouselContainer = document.createElement('div');
-    carouselContainer.id = 'carouselExampleIndicators';
-    carouselContainer.className = 'carousel slide';
-    carouselContainer.setAttribute('data-bs-ride', 'carousel');
+    const screenWidth = window.innerWidth;
 
-    const indicators = document.createElement('div');
-    indicators.className = 'carousel-indicators';
+    if (screenWidth < 992 && project.fallbackImage) {
+        const fallbackImage = document.createElement('img');
+        fallbackImage.src = project.fallbackImage;
+        fallbackImage.alt = 'Website preview';
+        fallbackImage.style.width = "100%";
+        fallbackImage.style.height = "auto";
 
-    const innerCarousel = document.createElement('div');
-    innerCarousel.className = 'carousel-inner';
-
-    // Loop through additional images starting from index 1 if necessary
-    project.images.slice(1).forEach((image, index) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.setAttribute('data-bs-target', '#carouselExampleIndicators');
-        button.setAttribute('data-bs-slide-to', index.toString());
-        button.setAttribute('aria-label', `Slide ${index + 2}`);
-
-        if (index === 0) {
-            button.classList.add('active');
-            button.setAttribute('aria-current', 'true');
-        }
-        indicators.appendChild(button);
-
-        const item = document.createElement('div');
-        item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-
-        const imgElement = document.createElement('img');
-        imgElement.src = image.url;
-        imgElement.alt = image.alt || project.title;
-        imgElement.className = 'd-block w-100';
-
-        item.appendChild(imgElement);
-        innerCarousel.appendChild(item);
-    });
-
-    // Append indicators and carousel items to the carousel container
-    carouselContainer.appendChild(indicators);
-    carouselContainer.appendChild(innerCarousel);
-
-    // Add carousel control buttons
-    const prevButton = document.createElement('button');
-    prevButton.className = 'carousel-control-prev';
-    prevButton.type = 'button';
-    prevButton.setAttribute('data-bs-target', '#carouselExampleIndicators');
-    prevButton.setAttribute('data-bs-slide', 'prev');
-    prevButton.innerHTML = `
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    `;
-
-    const nextButton = document.createElement('button');
-    nextButton.className = 'carousel-control-next';
-    nextButton.type = 'button';
-    nextButton.setAttribute('data-bs-target', '#carouselExampleIndicators');
-    nextButton.setAttribute('data-bs-slide', 'next');
-    nextButton.innerHTML = `
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    `;
-
-    carouselContainer.appendChild(prevButton);
-    carouselContainer.appendChild(nextButton);
-
-    // Append the entire carousel to the overlay images container if necessary
-    overlayImagesContainer.appendChild(carouselContainer);
+        fallbackImageContainer.appendChild(fallbackImage);
+        embedContainer.style.display = 'none';
+    } else if (project.embedUrl) {
+        embedContainer.style.display = 'block';
+    }
 
     // Show the overlay
     overlay.style.display = 'flex';
