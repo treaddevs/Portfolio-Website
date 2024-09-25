@@ -21,6 +21,7 @@ window.showVIAOverlay = function (project) {
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
+    const fallbackWrapper = document.querySelector('.fallback-wrapper');
 
     // Clear previous images and text in the overlay container
     overlayImagesContainer.innerHTML = '';
@@ -36,6 +37,8 @@ window.showVIAOverlay = function (project) {
     } else {
         overlayImage.style.display = 'none'; // Hide if not available
     }
+
+    fallbackWrapper.style.display = 'none';
 
     // Set the text content including role, date, and details
     overlayText.innerHTML = `

@@ -451,23 +451,16 @@ body.overlay-open {
     margin: 10px;
 }
 
-#overlay-image {
+/* #overlay-image {
     display: block;
     width: 100vw;
-}
+} */
 
-#overlay-images-container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    width: 90vw;
-    margin: 0 auto;
-}
-
-.overlay-image-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px
+.overlay-images-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 20px; 
 }
 
 #overlay-video {
