@@ -47,7 +47,18 @@ window.showF1Overlay = function (project) {
         <div class="f1-embed-container" style="display: none";>
             <embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh">
         </div>
-        <div id="fallback-image-container"></div>
+        <div class="fallback-wrapper">        
+            <div id="fallback-image-container"></div>
+        </div>
+        <p class="details-2">${project.details2}</p>
+        <p class="details-3">${project.details3}</p>
+        <div class="image-container">
+            <div style="background-image: url('${project.images[1].url}');"></div>
+        </div>
+        <p class="details-4">${project.details4}</p>
+        <div class="image-container">
+            <div style="background-image: url('${project.images[2].url}');"></div>
+        </div>
     `;
 
     const screenWidth = window.innerWidth;

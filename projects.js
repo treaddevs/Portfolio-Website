@@ -42,7 +42,9 @@ export const projects = {
             images: './Images/Formula1.jpg',
             details: 'Details of Development Project 3',
             images: [
-                { url: './Images/Formula1.jpg' }
+                { url: './Images/Formula1.jpg' },
+                { url: './Images/3D_Carousel.png' },
+                { url: './Images/Rankings.png' }
             ],
             fallbackImage: './Images/Fusion-F1_Website.png',
             icons: [
@@ -57,6 +59,7 @@ export const projects = {
             details: 'Being the first website I built from the ground up, my goal was to reimagine and redesign the website of an existing brand. Captivated by the intensity of the Netflix series <a href="https://www.imdb.com/title/tt8289930/"><em>Formula 1: Drive to Survive</em></a>, I decided to start with Formula 1 for its global influence, international innovation, acceptance of use for educational purposes, asset/font availability, and presence of public APIs. <a href="https://treaddevs.github.io/Fusion-F1/">https://treaddevs.github.io/Fusion-F1/</a>',
             details2: 'I decided to use a dark theme because white text is easier to read on a dark background and chose to embed engaging components. I also used motion and color in the background color splash theme since F1 is flashy and explosive. Colors were also coordinated in the navbar where the text for each drivers name matches their team color, as well as the date elements connected to the timeline on the teams pages.',
             details3: 'The project includes interactive components such as the race schedule accordion with cards, shuffling concept car carousel, 3D Sketchfab model iframe embed, hover effects, and more.',
+            details4: 'The driver rankings/standings section is modeled after the same currently found on the Formula 1 website <a href="https://www.formula1.com/">https://www.formula1.com/</a>. This component uses the F1 Ergast Developer API to load the driver data (Note: this API is being deprecated at the end of the 2024 season)'
         },
         {
             title: 'Pizza Ordering System',
