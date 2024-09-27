@@ -1,4 +1,4 @@
-window.showVIAOverlay = function (project) {
+window.showVIADesignOverlay = function (project) {
     // Get all necessary elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
@@ -33,7 +33,7 @@ window.showVIAOverlay = function (project) {
         <div class="subheading">
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
-                ${project.title === 'The VIA Agency' && project.type === 'dev' ?
+                ${project.title === 'The VIA Agency' && project.type === 'design' ?
                     project.icons.slice(0, 5).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px">
@@ -74,7 +74,7 @@ window.showVIAOverlay = function (project) {
         <div class="subheading">
             <h4 class="second-category">${project.secondCategory}</h4>
             <div class="icons-container">
-                ${project.title === 'The VIA Agency' && project.type === 'dev' ?
+                ${project.title === 'The VIA Agency' && project.type === 'design' ?
                 project.icons.slice(5).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px" style="border-radius: 50px;">
@@ -123,18 +123,6 @@ window.showVIAOverlay = function (project) {
         const textButtonContainer = document.createElement('div');
         textButtonContainer.className = 'text-button-container'; // Add a class for styling
 
-        // Conditionally add the chat button and details text only for VIA Agency
-        if (project.title === 'The VIA Agency' && project.type === 'dev') {
-            // Add the chat button
-            const chatButton = document.createElement('button');
-            chatButton.className = 'btn btn-primary';
-            chatButton.textContent = 'Chat with Boredom-Blaster!';
-            chatButton.onclick = function () {
-                botpress.toggle();
-            };
-            textButtonContainer.appendChild(chatButton);
-        }
-
         // Add the details4 text below the button
         const detailsTextElement = document.createElement('p');
         detailsTextElement.className = 'image-text';
@@ -163,12 +151,5 @@ window.closeOverlay = function () {
     if (overlay) {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
-
-        // Hide the Botpress webchat container
-        const bpContainer = document.querySelector('.bpContainer');
-        if (bpContainer) {
-            bpContainer.style.display = 'none';
-            bpContainer.remove();
-        }
     }
 };

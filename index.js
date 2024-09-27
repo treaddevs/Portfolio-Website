@@ -158,9 +158,11 @@ window.activateSection = function (section) {
                 if (project.title === 'Pizza Ordering System' && project.type === 'dev') {
                     window.showBrickyardOverlay(project);
                 } else if (project.title === 'The VIA Agency' && project.type === 'dev') {
-                    window.showVIAOverlay(project);
+                    window.showVIADevOverlay(project);
                 } else if (project.title === 'Fusion F1' && project.type === 'dev') {
                     window.showF1Overlay(project);
+                } else if (project.title === 'The VIA Agency' && project.type === 'design') {
+                    window.showVIADesignOverlay(project);
                 }
             };
             grid.appendChild(projectItem);

@@ -1,4 +1,4 @@
-window.showVIAOverlay = function (project) {
+window.showVIADevOverlay = function (project) {
     function loadBotpressWebchat() {
         // Load the Botpress webchat inject script
         const injectScript = document.createElement('script');
