@@ -49,7 +49,7 @@ window.showVIAOverlay = function (project) {
         <div class="subheading">
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
-                ${project.title === 'The VIA Agency' ?
+                ${project.title === 'The VIA Agency' && project.type === 'dev' ?
                     project.icons.slice(0, 5).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px">
@@ -61,7 +61,7 @@ window.showVIAOverlay = function (project) {
         <p class="details">${project.details}</p>
         ${project.embedUrl ? `<div class="via-embed-container"><embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh"></div>` : ''}
         <p class="details">${project.details2}</p>
-    `;
+    `;  
 
     // Handle video display
     if (project.videos) {
@@ -90,7 +90,7 @@ window.showVIAOverlay = function (project) {
         <div class="subheading">
             <h4 class="second-category">${project.secondCategory}</h4>
             <div class="icons-container">
-                ${project.title === 'The VIA Agency' ?
+                ${project.title === 'The VIA Agency' && project.type === 'dev' ?
                 project.icons.slice(5).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px" style="border-radius: 50px;">
@@ -140,7 +140,7 @@ window.showVIAOverlay = function (project) {
         textButtonContainer.className = 'text-button-container'; // Add a class for styling
 
         // Conditionally add the chat button and details text only for VIA Agency
-        if (project.title === 'The VIA Agency') {
+        if (project.title === 'The VIA Agency' && project.type === 'dev') {
             // Add the chat button
             const chatButton = document.createElement('button');
             chatButton.className = 'btn btn-primary';

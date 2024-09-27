@@ -33,7 +33,7 @@ window.showBrickyardOverlay = function (project) {
         <div class="subheading">
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
-                ${project.title === 'Pizza Ordering System' && project.icons.length > 0 ?
+                ${project.title === 'Pizza Ordering System' && project.type === 'dev' && project.icons.length > 0 ?
                     `<a href="${project.icons[0].link}" target="_blank" rel="noopener noreferrer">
                         <img src="${project.icons[0].url}" alt="Icon" class="java-icon" width="auto" height="75px">
                     </a>`

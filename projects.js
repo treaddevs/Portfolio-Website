@@ -9,6 +9,7 @@ export const projects = {
         },
         {
             title: 'The VIA Agency',
+            type: 'dev',
             category: 'Web Development',
             secondCategory: 'Chatbot',
             fullScreenImage: './Images/Atrium.png',
@@ -37,6 +38,7 @@ export const projects = {
         },
         {
             title: 'Fusion F1',
+            type: 'dev',
             category: 'Web Development',
             fullScreenImage: './Images/F1-Deezen.jpg',
             images: './Images/Formula1.jpg',
@@ -63,6 +65,7 @@ export const projects = {
         },
         {
             title: 'Pizza Ordering System',
+            type: 'dev',
             category: 'Desktop Application',
             fullScreenImage: './Images/Brickyard-Counter.jpg',
             images: [
@@ -84,15 +87,34 @@ export const projects = {
     ],
     design: [
         {
-            title: 'Design Project 1',
-            category: 'Web Development',
-            images: '',
+            title: 'Solana Solar',
+            category: 'UI Design',
+            images: './Images/Solana.png',
             details: 'Details of Design Project 1'
         },
         {
-            title: 'Design Project 2',
-            category: 'Web Development',
-            images: '',
+            title: 'Quala Water Bottles',
+            category: 'UI Design',
+            images: './Images/Quala.png',
+            details: 'Details of Design Project 2'
+        },
+        {
+            title: 'The VIA Agency',
+            type: 'design',
+            category: 'UI + Graphic Design',
+            images: './Images/VIA-logo.jpg',
+            details: 'Details of Design Project 2'
+        },
+        {
+            title: 'Mobile App UI Designs',
+            category: 'UI Design',
+            images: './Images/Muse.png',
+            details: 'Details of Design Project 2'
+        },
+        {
+            title: 'Miscellaneous',
+            category: 'UI + Graphic Design',
+            images: './Images/SocialMedia_UI.jpeg',
             details: 'Details of Design Project 2'
         }
     ],

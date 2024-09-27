@@ -155,11 +155,11 @@ window.activateSection = function (section) {
                 </div>
             `;
             projectItem.onclick = () => {
-                if (project.title === 'Pizza Ordering System') {
+                if (project.title === 'Pizza Ordering System' && project.type === 'dev') {
                     window.showBrickyardOverlay(project);
-                } else if (project.title === 'The VIA Agency') {
+                } else if (project.title === 'The VIA Agency' && project.type === 'dev') {
                     window.showVIAOverlay(project);
-                } else if (project.title === 'Fusion F1') {
+                } else if (project.title === 'Fusion F1' && project.type === 'dev') {
                     window.showF1Overlay(project);
                 }
             };

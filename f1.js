@@ -33,7 +33,7 @@ window.showF1Overlay = function (project) {
         <div class="subheading">
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
-                ${project.title === 'Fusion F1' ?
+                ${project.title === 'Fusion F1' && project.type === 'dev' ?
                     project.icons.slice(0, 4).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="50px">
