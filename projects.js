@@ -102,8 +102,20 @@ export const projects = {
             title: 'The VIA Agency',
             type: 'design',
             category: 'UI + Graphic Design',
-            images: './Images/VIA-logo.jpg',
-            details: 'Details of Design Project 2'
+            secondCategory: 'United Way of Southern Maine',
+            fullScreenImage: './Images/Atrium.png',
+            images: [
+                { url: './Images/VIA-logo.jpg' },
+                { url: './Images/ALICE.png' },
+                { url: './Images/Chatbot.png' },
+                { url: './Images/Chatbot.png' }
+            ],
+            icons: [
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
+            ],
+            role: 'Creative Technology Intern',
+            date: '(May-August 2024)',
+            details: 'During my role as Creative Technology Intern at VIA I had the opportunity to work on a variety of projects in both the development and design spaces. This section features some of the graphic and UI design work that were highlights of my summer intern experience.'
         },
         {
             title: 'Mobile App UI Designs',

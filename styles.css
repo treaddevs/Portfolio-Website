@@ -463,6 +463,33 @@ body.overlay-open {
     margin: 0 20px; 
 }
 
+#overlay-images-container-2 {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    margin: 0 20px; 
+    height: auto;
+}
+
+.single-image-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    max-width: 50vw; 
+}
+
+.single-image-container img {
+    width: 50vw;
+    height: auto;         
+    max-height: calc(80vh);
+    object-fit: contain; 
+}
+
+.overlay-additional-image {
+    max-width: 100%; 
+    height: auto;   
+}
+
 #overlay-video {
     width: 90vw;
 }
