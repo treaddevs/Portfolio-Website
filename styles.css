@@ -465,6 +465,7 @@ body.overlay-open {
 
 #overlay-images-container-2 {
     display: flex; 
+    flex-direction: column;
     justify-content: flex-start; 
     align-items: flex-start; 
     margin: 0 20px; 
@@ -478,11 +479,31 @@ body.overlay-open {
     max-width: 50vw; 
 }
 
+.single-image-container-2 {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
 .single-image-container img {
     width: 50vw;
     height: auto;         
     max-height: calc(80vh);
     object-fit: contain; 
+}
+
+
+.single-image-container-2 img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
 }
 
 .overlay-additional-image {
@@ -509,6 +530,7 @@ body.overlay-open {
 }
 
 .details {
+    font-family: 'Montserrat';
     text-align: justify;
     margin: 30px 40px;
 }
@@ -566,7 +588,7 @@ body.overlay-open {
     justify-content: space-between;
     font-family: 'Agrandir-GrandHeavy';
     color: var(--font-color);
-    margin: 0;
+    margin-top: 20px;
 }
 
 #subtext {
@@ -591,7 +613,19 @@ body.overlay-open {
     padding: 4px;
 }
 
+.project-icon-UWSM {
+    padding: 4px;
+    border-radius: 15px;
+}
+
 .second-category {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Agrandir-GrandHeavy';
+    margin: 0 0 0 40px;
+}
+
+.third-category {
     display: flex;
     justify-content: flex-start;
     font-family: 'Agrandir-GrandHeavy';
@@ -643,6 +677,12 @@ body.overlay-open {
     gap: 20px;
     align-items: flex-start;
     margin-bottom: 50px;
+}
+
+.bottom-container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .bottom-container img {
@@ -816,6 +856,11 @@ body.overlay-open {
         height: 40px;
         width: auto;
     }
+    .project-icon-UWSM {
+        height: 80px;
+        width: auto;
+        border-radius: 10px;
+    }
     .java-icon {
         height: 50px;
         width: auto;
@@ -845,6 +890,15 @@ body.overlay-open {
     .details-4 {
         display: none;
     }
+    .single-image-container {
+        max-width: 90vw;
+        height: auto;
+    }
+    .single-image-container img {
+        width: 90vw;
+        height: auto;
+        max-height: calc(100vh - 20px);
+    }
 }
 
 @media (max-width: 750px) {
@@ -855,6 +909,9 @@ body.overlay-open {
         font-size: 1.5rem;
     }
     .second-category {
+        font-size: 1.5rem;
+    }
+    .third-category {
         font-size: 1.5rem;
     }
     #subtext {
@@ -885,6 +942,9 @@ body.overlay-open {
     .second-category {
         font-size: 1rem;
     }
+    .third-category {
+        font-size: 1rem;
+    }
     #subtext {
         font-size: 1rem;
     }
@@ -897,6 +957,11 @@ body.overlay-open {
     .project-icon {
         height: 30px;
         width: auto;
+    }
+    .project-icon-UWSM {
+        height: 60px;
+        width: auto;
+        border-radius: 10px;
     }
     .details {
         font-size: 0.85rem;

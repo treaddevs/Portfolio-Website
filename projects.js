@@ -103,19 +103,22 @@ export const projects = {
             type: 'design',
             category: 'UI + Graphic Design',
             secondCategory: 'United Way of Southern Maine',
+            thirdCategory: 'Chatbot UI',
             fullScreenImage: './Images/Atrium.png',
             images: [
                 { url: './Images/VIA-logo.jpg' },
                 { url: './Images/ALICE.png' },
                 { url: './Images/Chatbot.png' },
-                { url: './Images/Chatbot.png' }
             ],
             icons: [
-                { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
+                { url: './Icons/UWSM-Logo-Square.png', link: 'https://www.unitedforalice.org/state-overview/Maine' }
             ],
             role: 'Creative Technology Intern',
             date: '(May-August 2024)',
-            details: 'During my role as Creative Technology Intern at VIA I had the opportunity to work on a variety of projects in both the development and design spaces. This section features some of the graphic and UI design work that were highlights of my summer intern experience.'
+            details: 'During my role as Creative Technology Intern at VIA I had the opportunity to work on a variety of projects in both the development and design spaces. This section features some of the graphic and UI design work that were highlights of my summer intern experience.',
+            details2: 'During the summer internship our team had the opportunity to work on a collaborative campaign for our client United Way of Southern Maine. I used my graphic design skills in this piece which is adaptable as both a digital and print opportunity.',
+            details3: 'When the chatbot assignment was presented to me I was immediately interested and took the initiative to start by designing a preliminary user interface to show the team. Once this was accepted I went ahead with implementing the actual chatbot which I was able to achieve using the Botpress platform.'
         },
         {
             title: 'Mobile App UI Designs',
