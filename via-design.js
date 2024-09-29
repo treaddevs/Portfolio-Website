@@ -46,7 +46,7 @@ window.showVIADesignOverlay = function (project) {
     if (project.secondCategory) {
         overlayText.innerHTML += `
         <div class="subheading">
-            <h4 class="second-category">${project.secondCategory}</h4>
+            <h4 class="second-category-2">${project.secondCategory}</h4>
             <div class="icons-container">
             <a href="https://example.com" target="_blank" rel="noopener noreferrer">
                 <img src="./Icons/UWSM-Logo-Square.png" alt="Icon" class="project-icon-UWSM" width="auto" height="120px">

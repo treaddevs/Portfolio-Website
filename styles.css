@@ -625,6 +625,13 @@ body.overlay-open {
     margin: 0 0 0 40px;
 }
 
+.second-category-2 {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Agrandir-GrandHeavy';
+    margin: 0 0 0 40px;
+}
+
 .third-category {
     display: flex;
     justify-content: flex-start;
@@ -929,6 +936,16 @@ body.overlay-open {
     }
     .bottom-container .overlay-additional-image {
         display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .second-category-2 {
+        font-size: 0.85rem;
+        padding-left: 20px; 
+        margin-left: 0; 
+        line-height: 1.2; 
+        word-wrap: break-word; 
     }
 }
 
