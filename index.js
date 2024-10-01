@@ -163,6 +163,9 @@ window.activateSection = function (section) {
                     window.showF1Overlay(project);
                 } else if (project.title === 'The VIA Agency' && project.type === 'design') {
                     window.showVIADesignOverlay(project);
+                } else if (project.title === 'Quala Water Bottles' && project.type === 'design') {
+                    console.log('Project clicked', project.title);
+                    window.showQualaOverlay(project);
                 }
             };
             grid.appendChild(projectItem);

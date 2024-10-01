@@ -36,7 +36,7 @@ window.showVIADesignOverlay = function (project) {
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px">
                         </a>
                     `).join('')
-            : ''}
+                : ''}
             </div>
         </div>
         <p class="details">${project.details}</p>
