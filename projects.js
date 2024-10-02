@@ -14,10 +14,10 @@ export const projects = {
             secondCategory: 'Chatbot',
             fullScreenImage: './Images/Atrium.png',
             images: [
-                { url: './Images/VIA-logo.jpg' },
-                { url: './Images/boredom-blaster-head-orange.jpg' },
-                { url: './Images/Botpress-Nodes.png' },
-                { url: './Images/boredom-blaser-logo.png' },
+                { url: './Images/VIA-logo.jpg', alt: 'The VIA Agency Logo' },
+                { url: './Images/boredom-blaster-head-orange.jpg', alt: 'The Boredom Blaster Logo Orange' },
+                { url: './Images/Botpress-Nodes.png', alt: 'Botpress Screenshot' },
+                { url: './Images/boredom-blaser-logo.png', alt: 'The Boredom Blaster Logo' },
             ],
             icons: [
                 { url: './Icons/Vue.png', link: 'https://vuejs.org/' },
@@ -44,9 +44,9 @@ export const projects = {
             images: './Images/Formula1.jpg',
             details: 'Details of Development Project 3',
             images: [
-                { url: './Images/Formula1.jpg' },
-                { url: './Images/3D_Carousel.png' },
-                { url: './Images/Rankings.png' }
+                { url: './Images/Formula1.jpg', alt: 'Formula 1 Logo' },
+                { url: './Images/3D_Carousel.png', alt: '3D carousel component screenshot' },
+                { url: './Images/Rankings.png', alt: 'Driver rankings screenshot' }
             ],
             fallbackImage: './Images/Fusion-F1_Website.png',
             icons: [
@@ -96,12 +96,16 @@ export const projects = {
             title: 'Quala Water Bottles',
             type: 'design',
             category: 'UI Design',
-            images: './Images/Quala.png',
+            images: [
+                { url: './Images/Quala.png', alt: 'Quala UI' },
+                { url: './Images/Quala_Figma.png', alt: 'Quala Figma Screenshot' }
+            ],
             icons: [
                 { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
             ],
             role: 'E-Commerce UI Designer',
             date: '(Summer 2024)',
+            videos: './Videos/Quala.mp4',
             embedUrl: 'https://www.figma.com/proto/B8tjTB7fRbdnrszJxEgKvZ/Quala?node-id=30-541&node-type=canvas&t=qb36rLT8gAoRtYY6-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1',
             details: 'Quala Water Bottles is a fictional company based on an existing product sourced from multiple online retailers. (<a href="https://www.amazon.com/Enerbone-Motivational-Drinking-Carrying-Leakproof/dp/B097SDRNHM" target="_blank">Enerbone 32 oz Drinking Water Bottle</a>) For this project, I designed an E-Commerce UI that displays multiple screens to guide the user experience and inform the purchasing decision. I designed this UI in Figma.'
         },

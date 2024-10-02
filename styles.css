@@ -505,6 +505,12 @@ body.overlay-open {
     margin: 20px 0;
 }
 
+.quala-figma-img {
+    width: 90%;
+    height: auto;
+    margin: 20px 0;
+}
+
 .single-image-container img {
     width: 50vw;
     height: auto;         
@@ -530,6 +536,18 @@ body.overlay-open {
 
 #overlay-video {
     width: 90vw;
+}
+
+#overlay-video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .role {

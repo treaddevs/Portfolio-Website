@@ -4,7 +4,6 @@ window.showQualaOverlay = function (project) {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
-    const embedContainer = document.getElementById('embed-element');
 
     console.log('Overlay triggered for project:', project);
 
@@ -43,12 +42,24 @@ window.showQualaOverlay = function (project) {
         <p class="details">${project.details}</p>
     `;
 
-    // Handle the embed URL
-    if (project.embedUrl) {
-        embedContainer.innerHTML = `<embed id="embed-element" src="${project.embedUrl}" style="width: 90vw; height: 85vh" allowfullscreen>`;
-        embedContainer.style.display = 'block';
-    } else {
-        embedContainer.style.display = 'none';
+    // Handle video display
+    if (project.videos) {
+        // Create video container
+        const videoContainer = document.createElement('div');
+        videoContainer.id = 'overlay-video-container';
+        videoContainer.innerHTML = `
+            <video id="overlay-video" class="video" controls>
+                <source id="video-source" src="${project.videos}" type="video/mp4">
+                Your browser does not support the video tag. 
+            </video>
+        `;
+        overlayText.appendChild(videoContainer); // Append the video container to overlay text
+        videoContainer.style.display = 'block';
+
+        const imgElement = document.createElement('img');
+        imgElement.classList.add('quala-figma-img');
+        imgElement.src = project.images[1].url;
+        videoContainer.appendChild(imgElement);
     }
 
     // Show the overlay
