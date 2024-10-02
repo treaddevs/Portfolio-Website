@@ -31,7 +31,7 @@ window.showQualaOverlay = function (project) {
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
                 ${project.title === 'Quala Water Bottles' && project.type === 'design' ?
-            project.icons.slice(0, 1).map((icon) => `
+            project.icons.slice(0, 2).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="50px">
                         </a>
@@ -60,6 +60,11 @@ window.showQualaOverlay = function (project) {
         imgElement.classList.add('quala-figma-img');
         imgElement.src = project.images[1].url;
         videoContainer.appendChild(imgElement);
+
+        const imgElement2 = document.createElement('img');
+        imgElement2.classList.add('quala-figma-img');
+        imgElement2.src = project.images[2].url;
+        videoContainer.appendChild(imgElement2);
     }
 
     // Show the overlay

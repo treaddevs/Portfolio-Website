@@ -88,9 +88,16 @@ export const projects = {
     design: [
         {
             title: 'Solana Solar',
+            type: 'design',
             category: 'UI Design',
-            images: './Images/Solana.png',
-            details: 'Details of Design Project 1'
+            images: [
+                { url: './Images/Solana.png', alt: 'Solana Solar UI' },
+                { url: './Images/Solana_UI.png', alt: 'Solana Solar Figma UI'}
+            ],
+            icons: [
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
+            ],
+            details: 'Solana Solar represents a fictional client'
         },
         {
             title: 'Quala Water Bottles',
@@ -98,10 +105,12 @@ export const projects = {
             category: 'UI Design',
             images: [
                 { url: './Images/Quala.png', alt: 'Quala UI' },
-                { url: './Images/Quala_Figma.png', alt: 'Quala Figma Screenshot' }
+                { url: './Images/Quala_Sketch.png', alt: 'Quala Sketch Screenshot' },
+                { url: './Images/Quala_Figma.png', alt: 'Quala Figma Screenshot' },
             ],
             icons: [
-                { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
+                { url: './Icons/Sketch.png', link: 'https://www.sketch.com/' }
             ],
             role: 'E-Commerce UI Designer',
             date: '(Summer 2024)',
