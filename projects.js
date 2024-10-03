@@ -173,8 +173,17 @@ export const projects = {
             title: 'Miscellaneous',
             type: 'design',
             category: 'UI + Graphic Design',
-            images: './Images/SocialMedia_UI.jpeg',
-            details: 'Details of Design Project 2'
+            images: [
+                { url: './Images/Profile.jpg', alt: 'Social media user interface' },
+                { url: './Images/LeafPhone.jpg', alt: 'Garden growing out of iPhone graphic design' },
+                { url: './Images/FutureCity.png', alt: 'Singapore, the city of the future graphic design' }
+            ],
+            icons: [
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
+                { url: './Icons/Sketch.png', link: 'https://www.sketch.com/' }
+            ],
+            role: 'Misc Design',
+            details: 'This section is comprised of miscellaneous UI and graphic design work I have created as side projects.'
         }
     ],
     arcade: [
