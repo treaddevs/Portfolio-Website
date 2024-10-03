@@ -31,16 +31,16 @@ window.showVIADesignOverlay = function (project) {
             <h4 class="project">${project.category}</h4>
             <div class="icons-container">
                 ${project.title === 'The VIA Agency' && project.type === 'design' ?
-                    project.icons.slice(0, 1).map((icon) => `
+            project.icons.slice(0, 1).map((icon) => `
                         <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                             <img src="${icon.url}" alt="Icon" class="project-icon" width="auto" height="40px">
                         </a>
                     `).join('')
-                : ''}
+            : ''}
             </div>
         </div>
         <p class="details">${project.details}</p>
-    `;  
+    `;
 
     // Add second section
     if (project.secondCategory) {
@@ -48,10 +48,10 @@ window.showVIADesignOverlay = function (project) {
         <div class="subheading">
             <h4 class="second-category-2">${project.secondCategory}</h4>
             <div class="icons-container">
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.unitedforalice.org/state-overview/Maine" target="_blank" rel="noopener noreferrer">
                 <img src="./Icons/UWSM-Logo-Square.png" alt="Icon" class="project-icon-UWSM" width="auto" height="120px">
             </a>
-            ${project.additionalIcons && project.additionalIcons.length > 0 ? 
+            ${project.additionalIcons && project.additionalIcons.length > 0 ?
                 project.additionalIcons.map(icon => `
                     <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
                         <img src="${icon.url}" alt="${icon.alt}" class="project-icon" width="auto" height="40px">
@@ -98,7 +98,7 @@ window.showVIADesignOverlay = function (project) {
 
     const bottomContainer = document.createElement('div');
     bottomContainer.className = 'bottom-container-2';
-    
+
     bottomContainer.innerHTML = `
         <div class="subheading">
             <h4 class="third-category">${project.thirdCategory}</h4>
@@ -130,7 +130,7 @@ window.showVIADesignOverlay = function (project) {
         // Append the single image container to the overlay
         overlayImagesContainer.appendChild(singleImageContainer2);
     }
-    
+
     // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');

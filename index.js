@@ -164,8 +164,13 @@ window.activateSection = function (section) {
                 } else if (project.title === 'The VIA Agency' && project.type === 'design') {
                     window.showVIADesignOverlay(project);
                 } else if (project.title === 'Quala Water Bottles' && project.type === 'design') {
-                    console.log('Project clicked', project.title);
                     window.showQualaOverlay(project);
+                } else if (project.title === 'Solana Solar' && project.type === 'design') {
+                    window.showSolanaOverlay(project);
+                } else if (project.title === 'Mobile App UI Designs' && project.type === 'design') {
+                    window.showMobileOverlay(project);
+                } else if (project.title === 'Miscellaneous' && project.type === 'design') {
+                    window.showMiscOverlay(project);
                 }
             };
             grid.appendChild(projectItem);

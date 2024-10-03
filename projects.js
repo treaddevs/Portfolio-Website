@@ -92,12 +92,14 @@ export const projects = {
             category: 'UI Design',
             images: [
                 { url: './Images/Solana.png', alt: 'Solana Solar UI' },
-                { url: './Images/Solana_UI.png', alt: 'Solana Solar Figma UI'}
+                { url: './Images/Solana_UI.png', alt: 'Solana Solar Figma UI' }
             ],
             icons: [
                 { url: './Icons/Figma.png', link: 'https://www.figma.com/' }
             ],
-            details: 'Solana Solar represents a fictional client'
+            role: 'Dashboard UI Design',
+            date: '(Summer 2024)',
+            details: "Solana Solar represents a fictional solar software company. This dashboard UI displays many critical metrics including: inverter power, feed-in power, load power, yield energy, exported energy, self-use energy, meter power, meter energy, UPS input voltage, and utility meter uptime. This dashboard is composed of digital widgets that display relevant information for each section and can be rearranged based on the user's preferences."
         },
         {
             title: 'Quala Water Bottles',
@@ -112,7 +114,7 @@ export const projects = {
                 { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
                 { url: './Icons/Sketch.png', link: 'https://www.sketch.com/' }
             ],
-            role: 'E-Commerce UI Designer',
+            role: 'E-Commerce UI Design',
             date: '(Summer 2024)',
             videos: './Videos/Quala.mp4',
             embedUrl: 'https://www.figma.com/proto/B8tjTB7fRbdnrszJxEgKvZ/Quala?node-id=30-541&node-type=canvas&t=qb36rLT8gAoRtYY6-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1',
@@ -142,12 +144,34 @@ export const projects = {
         },
         {
             title: 'Mobile App UI Designs',
+            type: 'design',
             category: 'UI Design',
-            images: './Images/Muse.png',
-            details: 'Details of Design Project 2'
+            images: [
+                { url: './Images/Muse.png', alt: 'Figma Muse music UI' },
+                { url: './Images/Muse-1.png', alt: 'Muse app start screen' },
+                { url: './Images/Muse-2.png', alt: 'Muse app screen 2' },
+                { url: './Images/Muse-3.png', alt: 'Muse app screen 3' },
+                { url: './Images/Muse-4.png', alt: 'Muse app audio controls' },
+                { url: './Images/Elev8-1.png', alt: 'Elev8 app' },
+                { url: './Images/Elev8-2.png', alt: 'Elev8 app resort conditions'}
+            ],
+            icons: [
+                { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
+                { url: './Icons/MaterialDesign.png', link: 'https://m3.material.io/' }
+            ],
+            role: 'Mobile App UI Designs',
+            date: '(Winter 2023)',
+            details: 'This section is comprised of some mobile UI designs I did in Figma over winter break 2023. I enjoy designing and understand concepts such as user-centered design, consistency, heirarchy, accessibility, simplicity, color theory, use of white/negative space, the rule of thirds in photo composition, and content. I find inspiration from clean and elegant designs from online sources like <a href="https://www.behance.net/">Behance</a>, <a href="https://dribbble.com/">Dribble</a>, and <a href="https://www.awwwards.com/">Awwwards</a> (for web design).',
+            details2: 'The Muse app is a mockup app designed to give the user a music mix tailored to their taste based on the weather conditions of the day. The acoustic ambiance matches the vibe outside.',
+            details3: 'The Muse app welcomes you with a start screen based on past interactions while displaying current conditions.',
+            details4: 'Once the sound is selected, the user can enjoy standard controls with lyrics displayed (if applicable).',
+            details5: 'Dynamic sound settings allow the user to tailor the tune to their taste.',
+            details6: 'Elev8 is a mockup app designed to shows ski resort conditions, information, and data.',
+            details7: 'Application demo illustrating an information dashboard for evaluating mountain resort weather and conditions.'
         },
         {
             title: 'Miscellaneous',
+            type: 'design',
             category: 'UI + Graphic Design',
             images: './Images/SocialMedia_UI.jpeg',
             details: 'Details of Design Project 2'

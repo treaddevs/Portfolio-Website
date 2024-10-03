@@ -505,7 +505,15 @@ body.overlay-open {
     margin: 20px 0;
 }
 
-.quala-figma-img {
+.quala-figma-img,
+.solana-figma-img,
+.muse-figma-img,
+.muse-1-img,
+.muse-2-img, 
+.muse-3-img, 
+.muse-4-img, 
+.elev8-1-img, 
+.elev8-2-img {
     width: 90%;
     height: auto;
     margin: 20px 0;
@@ -568,6 +576,12 @@ body.overlay-open {
     font-family: 'Montserrat';
     text-align: justify;
     margin: 30px 40px;
+}
+
+.mobile-details {
+    font-family: 'Montserrat';
+    text-align: justify;
+    margin: 0px 40px;
 }
 
 .details-2 {
@@ -1015,7 +1029,8 @@ body.overlay-open {
         width: auto;
         border-radius: 10px;
     }
-    .details {
+    .details,
+    .mobile-details {
         font-size: 0.85rem;
     }
     .image-text {
