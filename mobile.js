@@ -74,11 +74,26 @@ window.showMobileOverlay = function (project) {
     document.body.classList.add('overlay-open');
 };
 
-// Function to close the overlay
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
+    
+    // Clear dynamically appended content (like mainContainer or image containers)
+    const overlayImagesContainer = document.getElementById('overlay-images-container-2');
+    const mainContainer = document.getElementById('main-container'); 
+
+    // Clear overlay images or other containers created dynamically
+    if (overlayImagesContainer) {
+        overlayImagesContainer.innerHTML = '';  // Clears all child elements
+    }
+    
+    if (mainContainer) {
+        mainContainer.remove();  // Remove the entire mainContainer element
+    }
+
+    // Hide the overlay
     if (overlay) {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
     }
 };
+

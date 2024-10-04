@@ -625,6 +625,13 @@ body.overlay-open {
     padding: 4px;
 }
 
+.game-image {
+    display: block;
+    width: 316px;
+    height: 216px;
+    object-fit: cover;
+}
+
 .project-icon-UWSM {
     padding: 4px;
     border-radius: 15px;

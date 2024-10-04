@@ -136,11 +136,30 @@ window.showVIADesignOverlay = function (project) {
     document.body.classList.add('overlay-open');
 };
 
-// Close the overlay function
+// Close the overlay function (universal for all overlays)
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
+    const overlayImagesContainer = document.getElementById('overlay-images-container-2'); // For dynamic images
+    const overlayText = document.getElementById('overlay-text'); // For dynamic text content
+    const overlayImage = document.getElementById('overlay-image'); // For the full-screen image
+
+    // Clear dynamically added content in the overlay
+    if (overlayImagesContainer) {
+        overlayImagesContainer.innerHTML = ''; // Clear all child elements (images, containers)
+    }
+
+    if (overlayText) {
+        overlayText.innerHTML = ''; // Clear text content
+    }
+
+    if (overlayImage) {
+        overlayImage.style.display = 'none'; // Hide the full-screen image
+        overlayImage.src = ''; // Reset the image source
+    }
+
+    // Hide the overlay
     if (overlay) {
-        overlay.style.display = 'none';
-        document.body.classList.remove('overlay-open');
+        overlay.style.display = 'none'; // Hide the overlay element
+        document.body.classList.remove('overlay-open'); // Remove the body class for open overlay
     }
 };

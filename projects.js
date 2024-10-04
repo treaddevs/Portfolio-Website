@@ -188,10 +188,69 @@ export const projects = {
     ],
     arcade: [
         {
-            title: 'Arcade Project 1',
-            category: 'Web Development',
-            images: '',
-            details: 'Details of Arcade Project 1'
+            title: 'Breakout Game',
+            type: 'game',
+            category: 'JavaScript Game',
+            images: [
+                { url: './Images/Breakout.png', alt: 'Breakout Game', className: 'game-image' }
+            ],
+            icons: [
+                { url: './Icons/CodePen-logo.png', link: 'https://codepen.io/trending' }
+            ],
+            role: 'Game Development',
+            details: 'We built this game in my Web Development class (CS 5610) using <a href="https://observablehq.com/">Observable</a> notebooks. For this website, I migrated my code to <a href="https://codepen.io/trending">CodePen</a> so I could embed the iframe within this overlay.'
+        },
+        {
+            title: 'Dice Game',
+            type: 'game',
+            category: 'JavaScript Game',
+            images: [
+                { url: './Images/DiceRoller.png', alt: 'Dice Roller Game', className: 'game-image' }
+            ],
+            icons: [
+                { url: './Icons/CodePen-logo.png', link: 'https://codepen.io/trending' }
+            ],
+            role: 'Game Development',
+            details: 'We built this game in my Web Development class (CS 5610) using <a href="https://observablehq.com/">Observable</a> notebooks. For this website, I migrated my code to <a href="https://codepen.io/trending">CodePen</a> so I could embed the iframe within this overlay.'
+        },
+        {
+            title: 'Snake Game',
+            type: 'game',
+            category: 'JavaScript Game',
+            images: [
+                { url: './Images/Snake.png', alt: 'Snake Game', className: 'game-image' }
+            ],
+            icons: [
+                { url: './Icons/CodePen-logo.png', link: 'https://codepen.io/trending' }
+            ],
+            role: 'Game Development',
+            details: 'We built this game in my Web Development class (CS 5610) using <a href="https://observablehq.com/">Observable</a> notebooks. For this website, I migrated my code to <a href="https://codepen.io/trending">CodePen</a> so I could embed the iframe within this overlay.'
+        },
+        {
+            title: 'Pong Game',
+            type: 'game',
+            category: 'JavaScript Game',
+            images: [
+                { url: './Images/Pong.png', alt: 'Pong Game', className: 'game-image' }
+            ],
+            icons: [
+                { url: './Icons/CodePen-logo.png', link: 'https://codepen.io/trending' }
+            ],
+            role: 'Game Development',
+            details: 'We built this game in my Web Development class (CS 5610) using <a href="https://observablehq.com/">Observable</a> notebooks. For this website, I migrated my code to <a href="https://codepen.io/trending">CodePen</a> so I could embed the iframe within this overlay.'
+        },
+        {
+            title: 'Tic-Tac-Toe Game',
+            type: 'game',
+            category: 'JavaScript Game',
+            images: [
+                { url: './Images/Tic-Tac-Toe.png', alt: 'Tic-Tac-Toe Game', className: 'game-image' }
+            ],
+            icons: [
+                { url: './Icons/CodePen-logo.png', link: 'https://codepen.io/trending' }
+            ],
+            role: 'Game Development',
+            details: 'We built this game in my Web Development class (CS 5610) using <a href="https://observablehq.com/">Observable</a> notebooks. For this website, I migrated my code to <a href="https://codepen.io/trending">CodePen</a> so I could embed the iframe within this overlay.'
         }
     ]
 }
