@@ -1,5 +1,4 @@
 window.showMobileOverlay = function (project) {
-    // Get the necessary overlay elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
@@ -7,13 +6,10 @@ window.showMobileOverlay = function (project) {
 
     console.log('Overlay triggered for project:', project);
 
-    // Clear any previous content in the overlay container
     overlayText.innerHTML = '';
 
-    // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the main image if available
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -21,7 +17,6 @@ window.showMobileOverlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    // Set the HTML structure for the overlay content
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -69,31 +64,34 @@ window.showMobileOverlay = function (project) {
         mainContainer.appendChild(imgElement);
     });
 
-    // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };
 
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
-    
-    // Clear dynamically appended content (like mainContainer or image containers)
-    const overlayImagesContainer = document.getElementById('overlay-images-container-2');
-    const mainContainer = document.getElementById('main-container'); 
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayText = document.getElementById('overlay-text');
+    const mainContainer = document.getElementById('main-container');
 
-    // Clear overlay images or other containers created dynamically
-    if (overlayImagesContainer) {
-        overlayImagesContainer.innerHTML = '';  // Clears all child elements
-    }
-    
     if (mainContainer) {
-        mainContainer.remove();  // Remove the entire mainContainer element
+        mainContainer.remove(); 
     }
-
-    // Hide the overlay
+    if (overlayTitle) {
+        overlayTitle.textContent = '';
+    }
+    if (overlayImage) {
+        overlayImage.src = '';
+        overlayImage.style.display = 'none';
+    }
+    if (overlayText) {
+        overlayText.innerHTML = ''; 
+    }
     if (overlay) {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
     }
 };
+
 

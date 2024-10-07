@@ -1,5 +1,4 @@
 window.showMiscOverlay = function (project) {
-    // Get the necessary overlay elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
@@ -7,13 +6,10 @@ window.showMiscOverlay = function (project) {
 
     console.log('Overlay triggered for project:', project);
 
-    // Clear any previous content in the overlay container
     overlayText.innerHTML = '';
 
-    // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the main image if available
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -21,7 +17,6 @@ window.showMiscOverlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    // Set the HTML structure for the overlay content
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -64,16 +59,32 @@ window.showMiscOverlay = function (project) {
         mainContainer.appendChild(imgElement);
     });
 
-    // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };
 
-// Function to close the overlay
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayText = document.getElementById('overlay-text');
+    const mainContainer = document.getElementById('main-container');
+
+    if (overlayTitle) overlayTitle.textContent = '';
+
+    if (overlayImage) {
+        overlayImage.src = ''; 
+        overlayImage.style.display = 'none'; 
+    }
+
+    if (overlayText) overlayText.innerHTML = ''; 
+
+    if (mainContainer) {
+        mainContainer.remove();
+    }
+
     if (overlay) {
-        overlay.style.display = 'none';
-        document.body.classList.remove('overlay-open');
+        overlay.style.display = 'none'; 
+        document.body.classList.remove('overlay-open'); 
     }
 };

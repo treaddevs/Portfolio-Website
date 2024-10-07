@@ -1,5 +1,4 @@
 window.showF1Overlay = function (project) {
-    // Get the necessary overlay elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
@@ -8,15 +7,14 @@ window.showF1Overlay = function (project) {
     const embedContainer = document.getElementById('embed-element');
     const fallbackImageContainer = document.getElementById('fallback-image-container');
 
-    // Clear any previous content in the overlay container
+    console.log('Overlay triggered for project:', project);
+
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
     fallbackImageContainer.innerHTML = '';
 
-    // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the main image if available
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -24,7 +22,6 @@ window.showF1Overlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    // Set the HTML structure for the overlay content
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -76,16 +73,35 @@ window.showF1Overlay = function (project) {
         embedContainer.style.display = 'block';
     }
 
-    // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };
 
-// Function to close the overlay
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayText = document.getElementById('overlay-text');
+    const overlayImagesContainer = document.getElementById('overlay-images-container');
+    const embedContainer = document.getElementById('embed-element');
+    const fallbackImageContainer = document.getElementById('fallback-image-container');
+
+    if (overlayTitle) overlayTitle.textContent = '';
+    if (overlayImage) {
+        overlayImage.src = ''; 
+        overlayImage.style.display = 'none'; 
+    }
+    if (overlayText) overlayText.innerHTML = ''; 
+    if (overlayImagesContainer) overlayImagesContainer.innerHTML = '';
+    if (embedContainer) {
+        embedContainer.src = ''; 
+        embedContainer.style.display = 'none';
+    }
+    if (fallbackImageContainer) fallbackImageContainer.innerHTML = ''; 
+
     if (overlay) {
-        overlay.style.display = 'none';
-        document.body.classList.remove('overlay-open');
+        overlay.style.display = 'none'; 
+        document.body.classList.remove('overlay-open'); 
     }
 };
+

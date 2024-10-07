@@ -1,27 +1,24 @@
 window.showVIADesignOverlay = function (project) {
-    // Get all necessary elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container-2');
 
-    // Clear previous images and text in the overlay container
+    console.log('Overlay triggered for project:', project);
+
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
 
-    // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the fullScreenImage if it exists
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
-        overlayImage.style.display = 'block'; // Show the full-screen image
+        overlayImage.style.display = 'block';
     } else {
-        overlayImage.style.display = 'none'; // Hide if not available
+        overlayImage.style.display = 'none';
     }
 
-    // Set the text content including role, date, and details
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -42,23 +39,22 @@ window.showVIADesignOverlay = function (project) {
         <p class="details">${project.details}</p>
     `;
 
-    // Add second section
     if (project.secondCategory) {
         overlayText.innerHTML += `
-        <div class="subheading">
-            <h4 class="second-category-2">${project.secondCategory}</h4>
-            <div class="icons-container">
-            <a href="https://www.unitedforalice.org/state-overview/Maine" target="_blank" rel="noopener noreferrer">
-                <img src="./Icons/UWSM-Logo-Square.png" alt="Icon" class="project-icon-UWSM" width="auto" height="120px">
-            </a>
-            ${project.additionalIcons && project.additionalIcons.length > 0 ?
+            <div class="subheading">
+                <h4 class="second-category-2">${project.secondCategory}</h4>
+                <div class="icons-container">
+                    <a href="https://www.unitedforalice.org/state-overview/Maine" target="_blank" rel="noopener noreferrer">
+                        <img src="./Icons/UWSM-Logo-Square.png" alt="Icon" class="project-icon-UWSM" width="auto" height="120px">
+                    </a>
+                    ${project.additionalIcons && project.additionalIcons.length > 0 ?
                 project.additionalIcons.map(icon => `
-                    <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
-                        <img src="${icon.url}" alt="${icon.alt}" class="project-icon" width="auto" height="40px">
-                    </a>2
-                `).join('') : ''}
-        </div>
-        </div>
+                        <a href="${icon.link}" target="_blank" rel="noopener noreferrer">
+                            <img src="${icon.url}" alt="${icon.alt}" class="project-icon" width="auto" height="40px">
+                        </a>2
+                    `).join('') : ''}
+                </div>
+            </div>
         <div class="subtext">
             <h5 id="subtext">ALICE Campaign</h5>
         </div>
@@ -106,7 +102,6 @@ window.showVIADesignOverlay = function (project) {
         <p class="details">${project.details3}</p>
     `;
 
-    // Append the bottom container after the last image
     overlayImagesContainer.appendChild(bottomContainer);
 
     // Check for 'United Way of Southern Maine' and display only one image
@@ -131,35 +126,36 @@ window.showVIADesignOverlay = function (project) {
         overlayImagesContainer.appendChild(singleImageContainer2);
     }
 
-    // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };
 
-// Close the overlay function (universal for all overlays)
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
-    const overlayImagesContainer = document.getElementById('overlay-images-container-2'); // For dynamic images
-    const overlayText = document.getElementById('overlay-text'); // For dynamic text content
-    const overlayImage = document.getElementById('overlay-image'); // For the full-screen image
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayText = document.getElementById('overlay-text');
+    const overlayImagesContainer = document.getElementById('overlay-images-container-2');
 
-    // Clear dynamically added content in the overlay
-    if (overlayImagesContainer) {
-        overlayImagesContainer.innerHTML = ''; // Clear all child elements (images, containers)
-    }
-
-    if (overlayText) {
-        overlayText.innerHTML = ''; // Clear text content
-    }
-
+    if (overlayTitle) overlayTitle.innerHTML = '';
     if (overlayImage) {
-        overlayImage.style.display = 'none'; // Hide the full-screen image
-        overlayImage.src = ''; // Reset the image source
+        overlayImage.style.display = 'none';
+        overlayImage.src = '';
     }
+    if (overlayText) overlayText.innerHTML = '';
+    if (overlayImagesContainer) overlayImagesContainer.innerHTML = '';
 
-    // Hide the overlay
+    const dynamicClasses = ['single-image-container', 'single-image-container-2', 'overlay-additional-image', 'bottom-container-2'];
+    dynamicClasses.forEach(className => {
+        const elements = document.getElementsByClassName(className);
+        while (elements.length > 0) {
+            elements[0].remove(); // Remove the first element until there are none left
+        }
+    });
+
     if (overlay) {
-        overlay.style.display = 'none'; // Hide the overlay element
-        document.body.classList.remove('overlay-open'); // Remove the body class for open overlay
+        overlay.style.display = 'none';
+        document.body.classList.remove('overlay-open');
     }
 };
+

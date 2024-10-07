@@ -1,20 +1,17 @@
 window.showBrickyardOverlay = function (project) {
-    // Get all necessary elements by their IDs
     const overlay = document.getElementById('content-overlay');
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
-    const fallbackWrapper = document.querySelector('.fallback-wrapper');
 
-    // Clear previous images and text in the overlay container
+    console.log('Overlay triggered for project:', project);
+
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
 
-    // Set the title of the overlay
     overlayTitle.textContent = project.title;
 
-    // Display the main image if it exists
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -22,9 +19,6 @@ window.showBrickyardOverlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    fallbackWrapper.style.display = 'none';
-
-    // Set the text content including role, date, and details
     overlayText.innerHTML = `
         <div class="heading">
             <h3 class="role">${project.role}</h3>
@@ -44,7 +38,7 @@ window.showBrickyardOverlay = function (project) {
         <p class="details">${project.details2}</p>
     `;
 
-    // Create the Bootstrap carousel for additional images
+    // Bootstrap carousel for additional images
     const carouselContainer = document.createElement('div');
     carouselContainer.id = 'carouselExampleIndicators';
     carouselContainer.className = 'carousel slide';
@@ -58,7 +52,6 @@ window.showBrickyardOverlay = function (project) {
 
     // Loop through images starting from index 1 to omit the first image
     project.images.slice(1).forEach((image, index) => {
-        // Create indicator buttons
         const button = document.createElement('button');
         button.type = 'button';
         button.setAttribute('data-bs-target', '#carouselExampleIndicators');
@@ -71,7 +64,7 @@ window.showBrickyardOverlay = function (project) {
         }
         indicators.appendChild(button);
 
-        // Create carousel items
+        // Carousel items
         const item = document.createElement('div');
         item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
 
@@ -84,11 +77,10 @@ window.showBrickyardOverlay = function (project) {
         innerCarousel.appendChild(item);
     });
 
-    // Append indicators and inner carousel to the container
     carouselContainer.appendChild(indicators);
     carouselContainer.appendChild(innerCarousel);
 
-    // Add control buttons
+    // Control buttons
     const prevButton = document.createElement('button');
     prevButton.className = 'carousel-control-prev';
     prevButton.type = 'button';
@@ -112,19 +104,36 @@ window.showBrickyardOverlay = function (project) {
     carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
 
-    // Append the entire carousel to the overlay images container
+    // Append the entire carousel to the overlay-images-container
     overlayImagesContainer.appendChild(carouselContainer);
 
-    // Show the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };
 
-// Close the overlay function
 window.closeOverlay = function () {
     const overlay = document.getElementById('content-overlay');
+    const overlayImagesContainer = document.getElementById('overlay-images-container');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayText = document.getElementById('overlay-text');
+    const overlayImage = document.getElementById('overlay-image');
+
+    if (overlayImagesContainer) {
+        overlayImagesContainer.innerHTML = ''; 
+    }
+    if (overlayTitle) {
+        overlayTitle.textContent = '';
+    }
+    if (overlayText) {
+        overlayText.innerHTML = ''; 
+    }
+    if (overlayImage) {
+        overlayImage.src = ''; 
+        overlayImage.style.display = 'none';
+    }
     if (overlay) {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
     }
 };
+
