@@ -3,9 +3,11 @@ window.showSolanaOverlay = function (project) {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
+    const overlayImagesContainer2 = document.getElementById('overlay-images-container-2');
 
     console.log('Overlay triggered for project:', project);
 
+    overlayImagesContainer2.innerHTML = '';
     overlayText.innerHTML = '';
 
     overlayTitle.textContent = project.title;

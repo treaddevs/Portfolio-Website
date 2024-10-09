@@ -155,7 +155,6 @@ window.closeOverlay = function () {
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
-    const fallbackWrapper = document.querySelector('.fallback-wrapper');
     const videoContainer = document.getElementById('overlay-video-container');
     const bpContainer = document.querySelector('.bpContainer');
 
@@ -164,7 +163,6 @@ window.closeOverlay = function () {
     overlayImage.src = '';
     overlayText.innerHTML = ''; 
     overlayImagesContainer.innerHTML = ''; 
-    fallbackWrapper.innerHTML = '';
     
     if (videoContainer) {
         videoContainer.remove();

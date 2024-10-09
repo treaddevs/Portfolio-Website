@@ -3,11 +3,11 @@ window.showVIADesignOverlay = function (project) {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
-    const overlayImagesContainer = document.getElementById('overlay-images-container-2');
+    const overlayImagesContainer2 = document.getElementById('overlay-images-container-2');
 
     console.log('Overlay triggered for project:', project);
 
-    overlayImagesContainer.innerHTML = '';
+    overlayImagesContainer2.innerHTML = '';
     overlayText.innerHTML = '';
 
     overlayTitle.textContent = project.title;
@@ -89,7 +89,7 @@ window.showVIADesignOverlay = function (project) {
         singleImageContainer.appendChild(imgElement);
 
         // Append the single image container to the overlay
-        overlayImagesContainer.appendChild(singleImageContainer);
+        overlayImagesContainer2.appendChild(singleImageContainer);
     }
 
     const bottomContainer = document.createElement('div');
@@ -102,7 +102,7 @@ window.showVIADesignOverlay = function (project) {
         <p class="details">${project.details3}</p>
     `;
 
-    overlayImagesContainer.appendChild(bottomContainer);
+    overlayImagesContainer2.appendChild(bottomContainer);
 
     // Check for 'United Way of Southern Maine' and display only one image
     if (project.secondCategory === 'United Way of Southern Maine' && project.images.length > 0) {
@@ -123,7 +123,7 @@ window.showVIADesignOverlay = function (project) {
         singleImageContainer2.appendChild(imgElement);
 
         // Append the single image container to the overlay
-        overlayImagesContainer.appendChild(singleImageContainer2);
+        overlayImagesContainer2.appendChild(singleImageContainer2);
     }
 
     overlay.style.display = 'flex';
@@ -135,27 +135,41 @@ window.closeOverlay = function () {
     const overlayTitle = document.getElementById('overlay-title');
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
-    const overlayImagesContainer = document.getElementById('overlay-images-container-2');
+    const overlayImagesContainer2 = document.getElementById('overlay-images-container-2');
 
-    if (overlayTitle) overlayTitle.innerHTML = '';
+    // Clear overlay title and text
+    if (overlayTitle) overlayTitle.textContent = '';
+    if (overlayText) overlayText.innerHTML = '';
+
+    // Hide and reset overlay image
     if (overlayImage) {
         overlayImage.style.display = 'none';
         overlayImage.src = '';
     }
-    if (overlayText) overlayText.innerHTML = '';
-    if (overlayImagesContainer) overlayImagesContainer.innerHTML = '';
 
-    const dynamicClasses = ['single-image-container', 'single-image-container-2', 'overlay-additional-image', 'bottom-container-2'];
+    // Clear the images container
+    if (overlayImagesContainer2) {
+        overlayImagesContainer2.innerHTML = '';
+    }
+
+    // Remove all dynamic content generated in the overlay
+    const dynamicClasses = [
+        'single-image-container', 
+        'single-image-container-2', 
+        'overlay-additional-image', 
+        'bottom-container-2'
+    ];
     dynamicClasses.forEach(className => {
         const elements = document.getElementsByClassName(className);
         while (elements.length > 0) {
-            elements[0].remove(); // Remove the first element until there are none left
+            elements[0].remove(); // Remove elements until none are left
         }
     });
 
+    // Hide the overlay
     if (overlay) {
         overlay.style.display = 'none';
-        document.body.classList.remove('overlay-open');
+        document.body.classList.remove('overlay-open'); // Remove overlay-open class
     }
 };
 

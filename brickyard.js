@@ -4,9 +4,11 @@ window.showBrickyardOverlay = function (project) {
     const overlayImage = document.getElementById('overlay-image');
     const overlayText = document.getElementById('overlay-text');
     const overlayImagesContainer = document.getElementById('overlay-images-container');
+    const fallbackWrapper = document.querySelector('.fallback-wrapper');
 
     console.log('Overlay triggered for project:', project);
 
+    fallbackWrapper.innerHTML = '';
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
 

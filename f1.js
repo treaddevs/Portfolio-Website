@@ -9,6 +9,12 @@ window.showF1Overlay = function (project) {
 
     console.log('Overlay triggered for project:', project);
 
+    // Check if fallbackImageContainer exists
+    if (!fallbackImageContainer) {
+        console.error('Fallback image container not found');
+        return; // Exit the function if not found
+    }
+
     overlayImagesContainer.innerHTML = '';
     overlayText.innerHTML = '';
     fallbackImageContainer.innerHTML = '';
