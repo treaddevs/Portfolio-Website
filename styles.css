@@ -223,6 +223,17 @@ nav.navbar {
     padding: 40px 20px;
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Agrandir-GrandHeavy';
+    justify-content: center;
+    padding: 40px 20px;
+}
+
 .work-nav {
     position: relative;
     display: flex;
@@ -233,7 +244,21 @@ nav.navbar {
     margin-bottom: 20px;
 }
 
+.about-nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 1200px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 .work-nav p {
+    margin: 0;
+}
+
+.about-nav p {
     margin: 0;
 }
 
@@ -603,6 +628,15 @@ body.overlay-open {
     margin-top: 20px;
 }
 
+h4.third-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Agrandir-GrandHeavy';
+    color: var(--font-color);
+    margin-top: 20px;
+}
+
 #subtext {
     display: flex;
     align-items: center;
@@ -777,6 +811,15 @@ body.overlay-open {
     .title h1 {
         font-size: 10rem;
     }
+    .project-icon-UWSM {
+        display: inline-block;
+        width: auto;
+        height: 120px;
+    }
+    .project-icon {
+        height: 40px;
+        width: auto;
+    }
 }
 
 @media (max-width: 1450px) {
@@ -844,13 +887,30 @@ body.overlay-open {
         width: 100%;
         padding: 0;
     }
+    .about {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
     .work-nav {
         display: flex;
         align-items: center;
         width: 100%;
         margin-bottom: 0;
     }
+    .about-nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0;
+    }
     .portfolio .work-nav p {
+        font-size: 0.85rem;
+        width: 60%;
+        padding: 5px;
+    }
+    .about .about-nav p {
         font-size: 0.85rem;
         width: 60%;
         padding: 5px;
@@ -877,10 +937,6 @@ body.overlay-open {
         top: 12.5%;
         left: 0;
         width: 110%
-    }
-    .project-icon {
-        height: 40px;
-        width: auto;
     }
     .project-icon-UWSM {
         height: 80px;
