@@ -576,12 +576,12 @@ body.overlay-open {
 }
 
 .details,
-.details2,
-.details3,
-.details4,
-.details5,
-.details6,
-.details7 {
+.details-2,
+.details-3,
+.details-4,
+.details-5,
+.details-6,
+.details-7 {
     font-family: 'Montserrat';
     text-align: justify;
     margin: 30px 40px;

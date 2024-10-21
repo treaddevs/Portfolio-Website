@@ -161,9 +161,18 @@ window.showQualaOverlay = function (project) {
     subheadingDiv.appendChild(iconsContainer);
     overlayText.appendChild(subheadingDiv);
 
+    const amazonLink = document.createElement('a');
+    amazonLink.href = 'https://www.amazon.com/Enerbone-Motivational-Drinking-Carrying-Leakproof/dp/B097SDRNHM';
+    amazonLink.target = '_blank';
+    amazonLink.rel = 'noopener noreferrer';
+    amazonLink.textContent = 'Enerbone 32 oz Drinking Water Bottle';
+
     const detailsParagraph = document.createElement('p');
     detailsParagraph.classList.add('details');
-    detailsParagraph.textContent = project.details;
+    detailsParagraph.appendChild(document.createTextNode('Quala Water Bottles is a fictional company based on an existing product sourced from multiple online retailers. ('));
+    detailsParagraph.appendChild(amazonLink);
+    detailsParagraph.appendChild(document.createTextNode(') For this project, I designed an E-Commerce UI that displays multiple screens to guide the user experience and inform the purchasing decision. I designed this UI in Figma'));
+
     overlayText.appendChild(detailsParagraph);
 
     if (project.videos) {

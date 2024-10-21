@@ -266,7 +266,16 @@ window.showVIADevOverlay = function (project) {
 
     const detailsParagraph = document.createElement('p');
     detailsParagraph.className = 'details';
-    detailsParagraph.textContent = project.details;
+
+    const viaAgencyLink = document.createElement('a');
+    viaAgencyLink.href = 'https://theviaagency.com';
+    viaAgencyLink.target = '_blank';
+    viaAgencyLink.rel = 'noopener noreferrer';
+    viaAgencyLink.textContent = 'The VIA Agency website';
+
+    detailsParagraph.appendChild(document.createTextNode('The internship began on May 28 as I started modifying Vue.js components to be displayed on '));
+    detailsParagraph.appendChild(viaAgencyLink);
+    detailsParagraph.appendChild(document.createTextNode('. Initially, I started working on the footer component, restructuring it to have its contents stack vertically when viewing on mobile. After this, I was assigned the GO.DO. component from the Culture section to work on.'));
     overlayText.appendChild(detailsParagraph);
 
     if (project.embedUrl) {
@@ -398,14 +407,28 @@ window.showVIADevOverlay = function (project) {
             textButtonContainer.appendChild(chatButton);
         }
 
-        if (project.details4) {
-            const details4Paragraph = document.createElement('p');
-            details4Paragraph.className = 'details';
-            details4Paragraph.textContent = project.details4;
-            details4Paragraph.style.marginLeft = '0';
-            details4Paragraph.style.marginRight = '0';
-            textButtonContainer.appendChild(details4Paragraph);
-        }
+        const detailsParagraph4 = document.createElement('p');
+        detailsParagraph4.className = 'details';
+
+        const armLink = document.createElement('a');
+        armLink.href = 'https://www.armandhammer.com/en/for-everything-soda';
+        armLink.target = '_blank';
+        armLink.rel = 'noopener noreferrer';
+        armLink.textContent = 'ARM & HAMMER™ Baking Soda';
+
+        detailsParagraph4.appendChild(document.createTextNode('The month of July was AI-Infused July at VIA. Our team set out to develop a working AI chatbot for '));
+        detailsParagraph4.appendChild(armLink);
+        detailsParagraph4.appendChild(document.createTextNode('. Using '));
+
+        const botpressLink = document.createElement('a');
+        botpressLink.href = 'https://botpress.com/';
+        botpressLink.target = '_blank';
+        botpressLink.rel = 'noopener noreferrer';
+        botpressLink.textContent = 'Botpress';
+
+        detailsParagraph4.appendChild(botpressLink);
+        detailsParagraph4.appendChild(document.createTextNode(', I trained the AI knowledge base on the contents of the website and the individual project/recipe pages. Connecting the Botpress nodes together allowed for developing a basic logical flow to the conversation.'));
+        textButtonContainer.appendChild(detailsParagraph4);
         
         bottomContainer.appendChild(textButtonContainer);
         mainContainer.appendChild(topImagesContainer);

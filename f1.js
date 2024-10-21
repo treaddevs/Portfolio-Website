@@ -179,7 +179,6 @@ window.showF1Overlay = function (project) {
             iconImg.src = icon.url;
             iconImg.alt = 'Icon';
             iconImg.className = 'project-icon';
-            iconImg.style.height = '50px';
             iconLink.appendChild(iconImg);
 
             iconsContainer.appendChild(iconLink);
@@ -189,10 +188,32 @@ window.showF1Overlay = function (project) {
     subheadingDiv.appendChild(iconsContainer);
     overlayText.appendChild(subheadingDiv);
 
-    const detailsPara = document.createElement('p');
-    detailsPara.className = 'details';
-    detailsPara.textContent = project.details;
-    overlayText.appendChild(detailsPara);
+    const detailsParagraph = document.createElement('p');
+    detailsParagraph.className = 'details';
+
+    const imdbLink = document.createElement('a');
+    imdbLink.href = 'https://www.imdb.com/title/tt8289930/';
+    imdbLink.target = '_blank';
+    imdbLink.rel = 'noopener noreferrer';
+    imdbLink.textContent = 'Formula 1: Drive to Survive';
+
+    detailsParagraph.appendChild(document.createTextNode('Being the first website I built from the ground up, my goal was to reimagine and redesign the website of an existing brand. Captivated by the intensity of the Netflix series '));
+    detailsParagraph.appendChild(imdbLink);
+    detailsParagraph.appendChild(document.createTextNode(', I decided to start with Formula 1 for its global influence, international innovation, acceptance of use for educational purposes, asset/font availability, and presence of public APIs.'));
+    overlayText.appendChild(detailsParagraph);
+
+    const detailsParagraph2 = document.createElement('p');
+    detailsParagraph2.className = 'details';
+
+    const githubLink = document.createElement('a');
+    githubLink.href = 'https://treaddevs.github.io/Fusion-F1/';
+    githubLink.target = '_blank';
+    githubLink.rel = 'noopener noreferrer';
+    githubLink.textContent = 'https://treaddevs.github.io/Fusion-F1/';
+   
+    detailsParagraph2.appendChild(githubLink);
+
+    overlayText.appendChild(detailsParagraph2);
 
     const screenWidth = window.innerWidth;
     if (screenWidth >= 992 && project.embedUrl) {
@@ -218,17 +239,17 @@ window.showF1Overlay = function (project) {
     }
 
     if (project.details2) {
-        const detailsPara2 = document.createElement('p');
-        detailsPara2.className = 'details-2';
-        detailsPara2.textContent = project.details2;
-        overlayText.appendChild(detailsPara2);
+        const detailsParagraph2 = document.createElement('p');
+        detailsParagraph2.className = 'details-2';
+        detailsParagraph2.textContent = project.details2;
+        overlayText.appendChild(detailsParagraph2);
     }
 
     if (project.details3) {
-        const detailsPara3 = document.createElement('p');
-        detailsPara3.className = 'details-3';
-        detailsPara3.textContent = project.details3;
-        overlayText.appendChild(detailsPara3);
+        const detailsParagraph3 = document.createElement('p');
+        detailsParagraph3.className = 'details-3';
+        detailsParagraph3.textContent = project.details3;
+        overlayText.appendChild(detailsParagraph3);
     }
 
     if (project.images && project.images.length > 1) {
@@ -241,12 +262,19 @@ window.showF1Overlay = function (project) {
         overlayText.appendChild(imageContainer1);
     }
 
-    if (project.details4) {
-        const detailsPara4 = document.createElement('p');
-        detailsPara4.className = 'details-4';
-        detailsPara4.textContent = project.details4;
-        overlayText.appendChild(detailsPara4);
-    }
+    const detailsParagraph4 = document.createElement('p');
+    detailsParagraph4.className = 'details';
+
+    const f1Link = document.createElement('a');
+    f1Link.href = 'https://www.formula1.com/';
+    f1Link.target = '_blank';
+    f1Link.rel = 'noopener noreferrer';
+    f1Link.textContent = 'https://www.formula1.com/';
+
+    detailsParagraph4.appendChild(document.createTextNode('The driver rankings/standings section is modeled after the same currently found on the Formula 1 website '));
+    detailsParagraph4.appendChild(f1Link);
+    detailsParagraph4.appendChild(document.createTextNode('. This component uses the F1 Ergast Developer API to load the driver data (Note: this API is being deprecated at the end of the 2024 season)'));
+    overlayText.appendChild(detailsParagraph4);
 
     if (project.images && project.images.length > 2) {
         const imageContainer2 = document.createElement('div');

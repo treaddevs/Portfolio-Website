@@ -90,14 +90,11 @@ window.showSolanaOverlay = function (project) {
 
     console.log('Overlay triggered for project:', project);
 
-    // Clear existing content safely
     overlayImagesContainer2.innerHTML = '';
     overlayText.innerHTML = '';
 
-    // Set overlay title
     overlayTitle.textContent = project.title;
 
-    // Handle the full screen image
     if (project.fullScreenImage) {
         overlayImage.src = project.fullScreenImage;
         overlayImage.style.display = 'block';
@@ -105,7 +102,6 @@ window.showSolanaOverlay = function (project) {
         overlayImage.style.display = 'none';
     }
 
-    // Create the main container structure
     const headingDiv = document.createElement('div');
     headingDiv.classList.add('heading');
 
@@ -129,7 +125,6 @@ window.showSolanaOverlay = function (project) {
 
     subheadingDiv.appendChild(categoryHeading);
 
-    // Icons container
     const iconsContainer = document.createElement('div');
     iconsContainer.classList.add('icons-container');
 
@@ -144,9 +139,6 @@ window.showSolanaOverlay = function (project) {
             iconImg.src = icon.url;
             iconImg.alt = 'Icon';
             iconImg.classList.add('project-icon');
-            iconImg.style.width = 'auto';
-            iconImg.style.height = '50px';
-
             iconLink.appendChild(iconImg);
             iconsContainer.appendChild(iconLink);
         });
@@ -154,7 +146,6 @@ window.showSolanaOverlay = function (project) {
 
     subheadingDiv.appendChild(iconsContainer);
 
-    // Add project details
     const detailsParagraph = document.createElement('p');
     detailsParagraph.classList.add('details');
     detailsParagraph.textContent = project.details;
@@ -163,12 +154,10 @@ window.showSolanaOverlay = function (project) {
     overlayText.appendChild(subheadingDiv);
     overlayText.appendChild(detailsParagraph);
 
-    // Main content container for additional images
     const mainContainer = document.createElement('div');
     mainContainer.id = 'main-container';
     overlayText.appendChild(mainContainer); 
 
-    // Add image if present
     if (project.images?.[1]?.url) {
         const imgElement = document.createElement('img');
         imgElement.classList.add('solana-figma-img');
@@ -176,7 +165,6 @@ window.showSolanaOverlay = function (project) {
         mainContainer.appendChild(imgElement);
     }
 
-    // Display the overlay
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
 };

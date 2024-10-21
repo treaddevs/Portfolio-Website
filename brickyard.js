@@ -212,16 +212,32 @@ window.showBrickyardOverlay = function (project) {
     subheadingDiv.appendChild(iconsContainer);
     overlayText.appendChild(subheadingDiv);
 
-    const detailsElement = document.createElement('p');
-    detailsElement.classList.add('details');
-    detailsElement.textContent = project.details;
+    const detailsParagraph = document.createElement('p');
+    detailsParagraph.classList.add('details');
 
-    const detailsElement2 = document.createElement('p');
-    detailsElement2.classList.add('details');
-    detailsElement2.textContent = project.details2;
+    const swingLink = document.createElement('a');
+    swingLink.href = 'https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html';
+    swingLink.target = '_blank';
+    swingLink.rel = 'noopener noreferrer';
+    swingLink.textContent = 'Swing';
 
-    overlayText.appendChild(detailsElement);
-    overlayText.appendChild(detailsElement2);
+    detailsParagraph.appendChild(document.createTextNode('During the summer of 2023 I was working a job as a line chef at a local pizza shop a few blocks from my campus while taking Object-Oriented Design (CS 5004) at the Roux Institute at Northeastern University. For the final project I decided to expand on my mid-semester project of developing a pizza ordering system for the restaurant. I chose to use the '));
+    detailsParagraph.appendChild(swingLink);
+    detailsParagraph.appendChild(document.createTextNode(' GUI widget toolkit for Java. I structured the system using the model-view-controller (MVC) architecture. I stored pizza toppings as a custom enum data type with corresponding arrays for associated small and large toppings prices.'));
+    overlayText.appendChild(detailsParagraph);
+
+    const detailsParagraph2 = document.createElement('p');
+    detailsParagraph2.classList.add('details');
+
+    const githubLink = document.createElement('a');
+    githubLink.href = 'https://github.com/treaddevs/Pizza-App-GUI';
+    githubLink.target = '_blank';
+    githubLink.rel = 'noopener noreferrer';
+    githubLink.textContent = 'View project on GitHub';
+
+    detailsParagraph2.appendChild(githubLink);
+
+    overlayText.appendChild(detailsParagraph2);
 
     if (project.images && project.images.length > 1) {
         const carouselContainer = document.createElement('div');
@@ -285,8 +301,6 @@ window.showBrickyardOverlay = function (project) {
 
         carouselContainer.appendChild(prevButton);
         carouselContainer.appendChild(nextButton);
-
-        // Append the entire carousel to the overlay-images-container
         overlayImagesContainer.appendChild(carouselContainer);
     }
 

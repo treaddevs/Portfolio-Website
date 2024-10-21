@@ -148,7 +148,6 @@ window.showMobileOverlay = function (project) {
             iconImage.src = icon.url;
             iconImage.alt = 'Icon';
             iconImage.classList.add('project-icon');
-            iconImage.style.height = '50px';
             iconLink.appendChild(iconImage);
             iconsContainer.appendChild(iconLink);
         });
@@ -156,18 +155,49 @@ window.showMobileOverlay = function (project) {
     }
     overlayText.appendChild(subheadingDiv);
 
+    const detailsParagraph = document.createElement('p');
+    detailsParagraph.className = 'details';
+
+    const behanceLink = document.createElement('a');
+    behanceLink.href = 'https://www.behance.net/';
+    behanceLink.target = '_blank';
+    behanceLink.rel = 'noopener noreferrer';
+    behanceLink.textContent = 'Behance';
+
+    const dribbbleLink = document.createElement('a');
+    dribbbleLink.href = 'https://dribbble.com/';
+    dribbbleLink.target = '_blank';
+    dribbbleLink.rel = 'noopener noreferrer';
+    dribbbleLink.textContent = 'Dribbble';
+
+    const awwwardsLink = document.createElement('a');
+    awwwardsLink.href = 'https://www.awwwards.com/';
+    awwwardsLink.target = '_blank';
+    awwwardsLink.rel = 'noopener noreferrer';
+    awwwardsLink.textContent = 'Awwwards';
+
+    detailsParagraph.appendChild(document.createTextNode('This section is comprised of some mobile UI designs I did in Figma over winter break 2023. I enjoy designing and understand concepts such as user-centered design, consistency, heirarchy, accessibility, simplicity, color theory, use of white/negative space, the rule of thirds in photo composition, and content. I find inspiration from clean and elegant designs from online sources like '));
+    detailsParagraph.appendChild(behanceLink);
+    detailsParagraph.appendChild(document.createTextNode(', '));
+    detailsParagraph.appendChild(dribbbleLink);
+    detailsParagraph.appendChild(document.createTextNode(', and '));
+    detailsParagraph.appendChild(awwwardsLink);
+    detailsParagraph.appendChild(document.createTextNode(' (for web design).'));
+
+    overlayText.appendChild(detailsParagraph);
+
     const mainContainer = document.createElement('div');
     mainContainer.id = 'main-container';
     overlayText.appendChild(mainContainer);
 
     const detailsAndImages = [
-        { detail: project.details2, imgSrc: project.images?.[0]?.url, imgClass: 'muse-figma-img' },
-        { detail: project.details3, imgSrc: project.images?.[1]?.url, imgClass: 'muse-1-img' },
-        { detail: project.details4, imgSrc: project.images?.[2]?.url, imgClass: 'muse-2-img' },
-        { detail: project.details5, imgSrc: project.images?.[3]?.url, imgClass: 'muse-3-img' },
-        { detail: project.details6, imgSrc: project.images?.[4]?.url, imgClass: 'muse-4-img' },
-        { detail: project.details7, imgSrc: project.images?.[5]?.url, imgClass: 'elev8-1-img' },
-        { detail: project.details8, imgSrc: project.images?.[6]?.url, imgClass: 'elev8-2-img' }
+        { imgSrc: project.images?.[0]?.url, imgClass: 'muse-figma-img' },
+        { detail: project.details2, imgSrc: project.images?.[1]?.url, imgClass: 'muse-1-img' },
+        { detail: project.details3, imgSrc: project.images?.[2]?.url, imgClass: 'muse-2-img' },
+        { detail: project.details4, imgSrc: project.images?.[3]?.url, imgClass: 'muse-3-img' },
+        { detail: project.details5, imgSrc: project.images?.[4]?.url, imgClass: 'muse-4-img' },
+        { detail: project.details6, imgSrc: project.images?.[5]?.url, imgClass: 'elev8-1-img' },
+        { detail: project.details7, imgSrc: project.images?.[6]?.url, imgClass: 'elev8-2-img' }
     ];
 
     detailsAndImages.forEach(item => {
