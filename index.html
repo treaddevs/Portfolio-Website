@@ -53,16 +53,16 @@
 
     <div class="portfolio">
         <div class="work-nav">
-            
+
             <div id="nav-pill" class="active-pill"></div>
 
-            <div id="dev-nav" class="nav-item active" onclick="activateSection('dev')">
+            <div id="dev-nav" class="nav-item active" onclick="activatePortfolioSection('dev')">
                 <p>Development</p>
             </div>
-            <div id="design-nav" class="nav-item" onclick="activateSection('design')">
+            <div id="design-nav" class="nav-item" onclick="activatePortfolioSection('design')">
                 <p>Design</p>
             </div>
-            <div id="arcade-nav" class="nav-item" onclick="activateSection('arcade')">
+            <div id="arcade-nav" class="nav-item" onclick="activatePortfolioSection('arcade')">
                 <p>Arcade</p>
             </div>
         </div>
@@ -91,20 +91,37 @@
 
     <div class="about">
         <div class="about-nav">
-            
-            <div id="about-nav-pill" class="about-active-pill"></div>
 
-            <div id="about-nav" class="nav-item active" onclick="activateSection('about')">
+            <div id="about-nav-pill" class="about-active-pill"></div>
+        
+            <div id="about-nav" class="about-item active" onclick="activateAboutSection('about')">
                 <p>About</p>
             </div>
-            <div id="music-nav" class="nav-item" onclick="activateSection('music')">
+            <div id="music-nav" class="about-item" onclick="activateAboutSection('music')">
                 <p>Music</p>
             </div>
-            <div id="hobbies-nav" class="nav-item" onclick="activateSection('hobbies')">
+            <div id="hobbies-nav" class="about-item" onclick="activateAboutSection('hobbies')">
                 <p>Hobbies</p>
             </div>
         </div>
         <div class="about-grid" id="about-grid"></div>
+    </div>
+
+    <div class="contact-container">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="5794dbd2-349f-45cd-8d3d-35257b329527">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img src="./Images/RightArrow.png" height="15px" width="auto" alt="Submit"></button>
+        </form>
+        <div class="contact-right">
+            <img src="./Images/Chat.png" alt="Contact Me">
+        </div>
     </div>
 
     <div class="footer">
@@ -146,16 +163,34 @@
         };
     </script>
 
+    <script>
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', function (e) {
+            setTimeout(() => {
+                form.reset(); 
+            }, 500);
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="https://unpkg.com/split-text-js"></script>
+    <script type="module" src="./breakout.js" defer></script>
     <script type="module" src="./brickyard.js" defer></script>
+    <script type="module" src="./dice.js" defer></script>
     <script type="module" src="./f1.js" defer></script>
     <script type="module" src="./index.js" defer></script>
     <script type="module" src="./misc.js" defer></script>
     <script type="module" src="./mobile.js" defer></script>
+    <script type="module" src="./pong.js" defer></script>
+    <script type="module" src="./portland.js" defer></script>
     <script type="module" src="./quala.js" defer></script>
+    <script type="module" src="./simon.js" defer></script>
+    <script type="module" src="./snake.js" defer></script>
     <script type="module" src="./solana.js" defer></script>
+    <script type="module" src="./space-invaders.js" defer></script>
+    <script type="module" src="./tic-tac-toe.js" defer></script>
     <script type="module" src="./via-design.js" defer></script>
     <script type="module" src="./via-dev.js" defer></script>
 </body>
