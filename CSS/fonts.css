@@ -6,7 +6,7 @@
          url('../Fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
          url('../Fonts/montserrat-italic-variablefont_wght-webfont.woff') format('woff'),
          url('../Fonts/montserrat-italic-variablefont_wght-webfont.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }

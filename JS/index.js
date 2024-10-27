@@ -381,10 +381,8 @@ window.activateAboutSection = function (section) {
                 hobbyDiv.appendChild(iconElement);
                 hobbyDiv.appendChild(textElement);
         
-                // Random delay between 0 and 2 seconds
-                const randomDelay = Math.random() * 2; // Adjust multiplier for longer delays
+                const randomDelay = Math.random() * 2; 
         
-                // Apply delay to the hobbyDiv
                 hobbyDiv.style.animationDelay = `${randomDelay}s`;
         
                 aboutContainer2.appendChild(hobbyDiv);
