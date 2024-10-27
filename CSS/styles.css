@@ -79,6 +79,10 @@ nav.navbar {
     background-color: var(--nav-link-hover-underline);
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--nav-link-active-color) !important; 
+}
+
 .navbar.bg-body-tertiary {
     background-color: var(--nav-bg-color) !important;
 }
@@ -159,7 +163,7 @@ nav.navbar {
     min-height: 100vh;
     width: 100vw;
     background-color: var(--bg-color);
-    background-image: url(Images/topographic-background.png);
+    background-image: url(../Images/topographic-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -167,10 +171,8 @@ nav.navbar {
 
 .title h1 {
     font-family: 'Graphik Arts';
-    /* font-size: clamp(6rem, 20vw, 12rem); */
     font-size: 8rem;
     color: var(--font-color);
-    /* line-height: 0.85; */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -210,6 +212,14 @@ nav.navbar {
     border-radius: 50px;
     text-align: center;
     text-decoration: none;
+}
+
+.copyright p {
+    margin: 0px 10px 0px 10px;
+}
+
+.copyright #current-year {
+    color: var(--font-color);
 }
 
 .portfolio,
@@ -285,7 +295,8 @@ nav.navbar {
     content: '';
 }
 
-/* .nav-item.active:hover::after {
+.nav-item.active:hover::after,
+.about-item.active:hover::after {
     position: absolute;
     left: 0;
     right: 0;
@@ -293,7 +304,7 @@ nav.navbar {
     margin: 0px 20px 0px 20px;
     background-color: white;
     content: '';
-} */
+}
 
 .projects-grid,
 .about-grid {
@@ -958,7 +969,14 @@ h4.third-category {
 } */
 
 .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px 15px 0px;
     background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Montserrat';
 }
 
 @media (max-width: 2200px) {

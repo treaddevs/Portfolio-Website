@@ -1,10 +1,14 @@
 import { projects } from './projects.js';
 
-// Set the current year in the year element
 const year = document.getElementById("year");
 const date = new Date();
 const currentYear = date.getFullYear();
 year.textContent = currentYear;
+
+const thisYear = document.getElementById("current-year");
+const thisDate = new Date();
+const thisCurrentYear = thisDate.getFullYear();
+thisYear.textContent = thisCurrentYear;
 
 // Variables for dark/light mode functionality
 const lightDarkMode = document.getElementById("light-dark-mode");
@@ -25,11 +29,11 @@ function updateIcons() {
 
     if (linkedinIcon && githubIcon) {
         if (isDarkMode) {
-            linkedinIcon.setAttribute('href', './SVG/linkedin-white.svg');
-            githubIcon.setAttribute('href', './SVG/github-white.svg');
+            linkedinIcon.setAttribute('href', '../SVG/linkedin-white.svg');
+            githubIcon.setAttribute('href', '../SVG/github-white.svg');
         } else {
-            linkedinIcon.setAttribute('href', './SVG/linkedin-black.svg');
-            githubIcon.setAttribute('href', './SVG/github-black.svg');
+            linkedinIcon.setAttribute('href', '../SVG/linkedin-black.svg');
+            githubIcon.setAttribute('href', '../SVG/github-black.svg');
         }
     }
 }
@@ -220,7 +224,7 @@ window.activateAboutSection = function (section) {
             const profileImage = document.createElement('div');
             profileImage.className = 'about-profile-image';
             profileImage.innerHTML = `
-                <img src="./Images/Portrait.jpeg" alt="Profile Image">
+                <img src="../Images/Portrait.jpeg" alt="Profile Image">
             `;
         
             const aboutText = document.createElement('div');
@@ -233,7 +237,7 @@ window.activateAboutSection = function (section) {
             detailsParagraph.className = 'details';
         
             const resumeLink = document.createElement('a');
-            resumeLink.href = './Documents/Resume 2024.pdf';
+            resumeLink.href = '../Documents/Resume 2024.pdf';
             resumeLink.target = '_blank';
             resumeLink.rel = 'noopener noreferrer';
             resumeLink.textContent = 'View Resume';
@@ -271,15 +275,15 @@ window.activateAboutSection = function (section) {
             const project = {
                 title: 'Icons',
                 icons: [
-                    { url: './Icons/Python.png', link: 'https://www.python.org/' },
-                    { url: './Icons/Java.png', link: 'https://www.java.com/en/' },
-                    { url: './Icons/HTML.png', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-                    { url: './Icons/CSS.png', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-                    { url: './Icons/JavaScript-logo.png', link: 'https://www.javascript.com/' },
-                    { url: './Icons/React-logo.png', link: 'https://react.dev/' },
-                    { url: './Icons/Tailwind.png', link: 'https://tailwindcss.com/' },
-                    { url: './Icons/Figma.png', link: 'https://www.figma.com/' },
-                    { url: './Icons/Sketch.png', link: 'https://www.sketch.com/' }
+                    { url: '../Icons/Python.png', link: 'https://www.python.org/' },
+                    { url: '../Icons/Java.png', link: 'https://www.java.com/en/' },
+                    { url: '../Icons/HTML.png', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+                    { url: '../Icons/CSS.png', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+                    { url: '../Icons/JavaScript-logo.png', link: 'https://www.javascript.com/' },
+                    { url: '../Icons/React-logo.png', link: 'https://react.dev/' },
+                    { url: '../Icons/Tailwind.png', link: 'https://tailwindcss.com/' },
+                    { url: '../Icons/Figma.png', link: 'https://www.figma.com/' },
+                    { url: '../Icons/Sketch.png', link: 'https://www.sketch.com/' }
                 ]
             };
         
@@ -343,17 +347,17 @@ window.activateAboutSection = function (section) {
 
         } else if (section === 'hobbies') {
             const icons = [
-                { url: './Icons/Snowboarding.png', alt: "Snowboarding" },
-                { url: './Icons/Skateboarding.png', alt: "Skateboarding" },
-                { url: './Icons/Biking.png', alt: "Biking" },
-                { url: './Icons/Hiking.png', alt: "Hiking" },
-                { url: './Icons/Swimming.png', alt: "Swimming" },
-                { url: './Icons/Traveling.png', alt: "Traveling" },
-                { url: './Icons/Cooking.svg', alt: "Cooking" },
-                { url: './Icons/Photography.png', alt: "Photography" },
-                { url: './Icons/Drawing.png', alt: "Drawing" },
-                { url: './Icons/Music.png', alt: "Music" },
-                { url: './Icons/Gardening.png', alt: "Plant Dad" }
+                { url: '../Icons/Snowboarding.png', alt: "Snowboarding" },
+                { url: '../Icons/Skateboarding.png', alt: "Skateboarding" },
+                { url: '../Icons/Biking.png', alt: "Biking" },
+                { url: '../Icons/Hiking.png', alt: "Hiking" },
+                { url: '../Icons/Swimming.png', alt: "Swimming" },
+                { url: '../Icons/Traveling.png', alt: "Traveling" },
+                { url: '../Icons/Cooking.svg', alt: "Cooking" },
+                { url: '../Icons/Photography.png', alt: "Photography" },
+                { url: '../Icons/Drawing.png', alt: "Drawing" },
+                { url: '../Icons/Music.png', alt: "Music" },
+                { url: '../Icons/Gardening.png', alt: "Plant Dad" }
             ];
         
             const hobbies = ['Snowboarding', 'Skateboarding', 'Biking', 'Hiking', 'Swimming', 'Traveling', 'Cooking', 'Photography', 'Drawing', 'Music', 'Plant Dad'];

@@ -265,7 +265,7 @@ window.showVIADesignOverlay = function (project) {
         unitedWayLink.rel = 'noopener noreferrer';
 
         const unitedWayImg = document.createElement('img');
-        unitedWayImg.src = './Icons/UWSM-Logo-Square.png';
+        unitedWayImg.src = '../Icons/UWSM-Logo-Square.png';
         unitedWayImg.alt = 'Icon';
         unitedWayImg.className = 'project-icon-UWSM';
         unitedWayImg.width = 'auto';
