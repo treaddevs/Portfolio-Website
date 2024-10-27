@@ -163,7 +163,7 @@ nav.navbar {
     min-height: 100vh;
     width: 100vw;
     background-color: var(--bg-color);
-    background-image: url(../Images/topographic-background.png);
+    background-image: url(../Images/Topography.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -745,9 +745,12 @@ body.overlay-open {
 .details a, 
 .details-2 a, 
 .details-3 a,
-.details-4 a,
-.bio a  {
+.details-4 a  {
     color: #ef4123;
+}
+
+.bio a {
+    color: rgb(0, 183, 255);
 }
 
 .heading {

@@ -233,8 +233,8 @@ window.activateAboutSection = function (section) {
             const bioHeader = document.createElement('p');
             bioHeader.className = 'bio-header';
 
-            const detailsParagraph = document.createElement('p');
-            detailsParagraph.className = 'details';
+            const bioParagraph = document.createElement('p');
+            bioParagraph.className = 'bio';
         
             const resumeLink = document.createElement('a');
             resumeLink.href = '../Documents/Resume 2024.pdf';
@@ -251,10 +251,10 @@ window.activateAboutSection = function (section) {
             universityLink.rel = 'noopener noreferrer';
             universityLink.textContent = 'The Roux Institute at Northeastern University';
         
-            detailsParagraph.appendChild(document.createTextNode('Hi, I\'m Sam Treadwell. I\'m originally from the Burlington, VT area and found my way to Portland, ME for grad school. I began my transition into tech in the Spring of 2022 when I enrolled in the Master\'s in Computer Science program at '));
-            detailsParagraph.appendChild(universityLink);
-            detailsParagraph.appendChild(document.createTextNode('. Since then I\'ve gained project experience in multiple programming languages and found a passion for web development and design. '));
-            detailsParagraph.appendChild(resumeLink);
+            bioParagraph.appendChild(document.createTextNode('Hi, I\'m Sam Treadwell. I\'m originally from the Burlington, VT area and found my way to Portland, ME for grad school. I began my transition into tech in the Spring of 2022 when I enrolled in the Master\'s in Computer Science program at '));
+            bioParagraph.appendChild(universityLink);
+            bioParagraph.appendChild(document.createTextNode('. Since then I\'ve gained project experience in multiple programming languages and found a passion for web development and design. '));
+            bioParagraph.appendChild(resumeLink);
 
 
             const techHeader = document.createElement('p');
@@ -264,7 +264,7 @@ window.activateAboutSection = function (section) {
             bioHeader.appendChild(document.createTextNode('Bio'));
 
             aboutText.appendChild(bioHeader);
-            aboutText.appendChild(detailsParagraph);  
+            aboutText.appendChild(bioParagraph);  
             aboutText.appendChild(techHeader);
         
             aboutContainer.appendChild(profileImage);
@@ -281,6 +281,7 @@ window.activateAboutSection = function (section) {
                     { url: '../Icons/CSS.png', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
                     { url: '../Icons/JavaScript-logo.png', link: 'https://www.javascript.com/' },
                     { url: '../Icons/React-logo.png', link: 'https://react.dev/' },
+                    { url: '../Icons/Vue.png', link: 'https://vuejs.org/' },
                     { url: '../Icons/Tailwind.png', link: 'https://tailwindcss.com/' },
                     { url: '../Icons/Figma.png', link: 'https://www.figma.com/' },
                     { url: '../Icons/Sketch.png', link: 'https://www.sketch.com/' }
