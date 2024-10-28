@@ -438,6 +438,8 @@ window.showVIADevOverlay = function (project) {
 
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
+
+    history.pushState({ overlayOpen: true }, "");
 };
 
 window.closeOverlay = function () {
@@ -465,5 +467,9 @@ window.closeOverlay = function () {
     if (bpContainer) {
         bpContainer.remove();
     }
+    if (history.state?.overlayOpen) history.back();
 };
 
+window.addEventListener("popstate", function(event) {
+    if (!event.state?.overlayOpen) closeOverlay();
+});

@@ -145,6 +145,8 @@ window.showPongOverlay = function (project) {
 
     overlay.style.display = 'flex';
     document.body.classList.add('overlay-open');
+
+    history.pushState({ overlayOpen: true }, "");
 };
 
 window.closeOverlay = function () {
@@ -168,4 +170,9 @@ window.closeOverlay = function () {
         overlay.style.display = 'none';
         document.body.classList.remove('overlay-open');
     }
+    if (history.state?.overlayOpen) history.back();
 };
+
+window.addEventListener("popstate", function(event) {
+    if (!event.state?.overlayOpen) closeOverlay();
+});
