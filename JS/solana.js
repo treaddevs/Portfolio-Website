@@ -80,7 +80,6 @@
 //         document.body.classList.remove('overlay-open'); 
 //     }
 // };
-// TEST
 
 window.showSolanaOverlay = function (project) {
     const overlay = document.getElementById('content-overlay');

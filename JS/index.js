@@ -134,7 +134,7 @@ window.activatePortfolioSection = function (section) {
         targetNav.classList.add('active');
 
         const grid = document.getElementById('projects-grid');
-        grid.innerHTML = ''; 
+        grid.textContent = '';
 
         const selectedProjects = projects[section];
 
@@ -145,15 +145,25 @@ window.activatePortfolioSection = function (section) {
             const imageSrc = Array.isArray(project.images) ? project.images[0].url : project.images;
             const imageAlt = Array.isArray(project.images) ? project.images[0].alt : project.title;
 
-            projectItem.innerHTML = `
-                <div class="project-card">
-                    <img src="${imageSrc}" alt="${imageAlt}" class="project-image">
-                    <div class="project-footer">
-                        <span class="project-category">${project.category}</span>
-                        <h3 class="project-title">${project.title}</h3>
-                    </div>
-                </div>
-            `;
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card';
+
+            const projectImage = document.createElement('img');
+            projectImage.src = imageSrc;
+            projectImage.alt = imageAlt;
+            projectImage.className = 'project-image';
+
+            const projectFooter = document.createElement('div');
+            projectFooter.className = 'project-footer';
+
+            const projectCategory = document.createElement('span');
+            projectCategory.className = 'project-category';
+            projectCategory.textContent = project.category;
+
+            const projectTitle = document.createElement('h3');
+            projectTitle.className = 'project-title';
+            projectTitle.textContent = project.title;
+
             projectItem.onclick = () => {
                 if (project.title === 'City of Portland' && project.type === 'dev') {
                     window.showPortlandOverlay(project);
@@ -173,22 +183,28 @@ window.activatePortfolioSection = function (section) {
                     window.showMobileOverlay(project);
                 } else if (project.title === 'Miscellaneous' && project.type === 'design') {
                     window.showMiscOverlay(project);
-                } else if (project.title === 'Breakout Game' && project.type === 'game' ) {
+                } else if (project.title === 'Breakout Game' && project.type === 'game') {
                     window.showBreakoutOverlay(project);
-                } else if (project.title === 'Dice Roller' && project.type === 'game' ) {
+                } else if (project.title === 'Dice Roller' && project.type === 'game') {
                     window.showDiceOverlay(project);
-                } else if (project.title === 'Snake Game' && project.type === 'game' ) {
+                } else if (project.title === 'Snake Game' && project.type === 'game') {
                     window.showSnakeOverlay(project);
-                } else if (project.title === 'Pong Game' && project.type === 'game' ) {
+                } else if (project.title === 'Pong Game' && project.type === 'game') {
                     window.showPongOverlay(project);
-                } else if (project.title === 'Tic-Tac-Toe Game' && project.type === 'game' ) {
+                } else if (project.title === 'Tic-Tac-Toe Game' && project.type === 'game') {
                     window.showTicTacToeOverlay(project);
-                } else if (project.title === 'Simon Game' && project.type === 'game' ) {
+                } else if (project.title === 'Simon Game' && project.type === 'game') {
                     window.showSimonOverlay(project);
-                } else if (project.title === 'Space Invaders Game' && project.type === 'game' ) {
+                } else if (project.title === 'Space Invaders Game' && project.type === 'game') {
                     window.showSpaceInvadersOverlay(project);
-                }  
+                }
             };
+            projectFooter.appendChild(projectCategory);
+            projectFooter.appendChild(projectTitle);
+            projectCard.appendChild(projectImage);
+            projectCard.appendChild(projectFooter);
+            projectItem.appendChild(projectCard);
+
             grid.appendChild(projectItem);
         });
     }, 100);
@@ -215,18 +231,21 @@ window.activateAboutSection = function (section) {
         targetNav.classList.add('active');
 
         const grid = document.getElementById('about-grid');
-        grid.innerHTML = '';
+        grid.textContent = '';
 
         if (section === 'about') {
             const aboutContainer = document.createElement('div');
             aboutContainer.className = 'about-container';
-        
+
             const profileImage = document.createElement('div');
             profileImage.className = 'about-profile-image';
-            profileImage.innerHTML = `
-                <img src="../Images/Portrait.jpeg" alt="Profile Image">
-            `;
-        
+
+            const img = document.createElement('img');
+            img.src = '../Images/Portrait.jpeg';
+            img.alt = 'Profile Image';
+
+            profileImage.appendChild(img);
+
             const aboutText = document.createElement('div');
             aboutText.className = 'about-text';
 
@@ -235,7 +254,7 @@ window.activateAboutSection = function (section) {
 
             const bioParagraph = document.createElement('p');
             bioParagraph.className = 'bio';
-        
+
             const resumeLink = document.createElement('a');
             resumeLink.href = '../Documents/Resume 2024.pdf';
             resumeLink.target = '_blank';
@@ -250,7 +269,7 @@ window.activateAboutSection = function (section) {
             universityLink.target = '_blank';
             universityLink.rel = 'noopener noreferrer';
             universityLink.textContent = 'The Roux Institute at Northeastern University';
-        
+
             bioParagraph.appendChild(document.createTextNode('Hi, I\'m Sam Treadwell. I\'m originally from the Burlington, VT area and found my way to Portland, ME for grad school. I began my transition into tech in the Spring of 2022 when I enrolled in the Master\'s in Computer Science program at '));
             bioParagraph.appendChild(universityLink);
             bioParagraph.appendChild(document.createTextNode('. Since then I\'ve gained project experience in multiple programming languages and found a passion for web development and design. '));
@@ -259,18 +278,18 @@ window.activateAboutSection = function (section) {
 
             const techHeader = document.createElement('p');
             techHeader.className = 'tech-header';
-            
+
             techHeader.appendChild(document.createTextNode('Tech Stack'));
             bioHeader.appendChild(document.createTextNode('Bio'));
 
             aboutText.appendChild(bioHeader);
-            aboutText.appendChild(bioParagraph);  
+            aboutText.appendChild(bioParagraph);
             aboutText.appendChild(techHeader);
-        
+
             aboutContainer.appendChild(profileImage);
             aboutContainer.appendChild(aboutText);
-        
-            grid.appendChild(aboutContainer); 
+
+            grid.appendChild(aboutContainer);
 
             const project = {
                 title: 'Icons',
@@ -287,28 +306,28 @@ window.activateAboutSection = function (section) {
                     { url: '../Icons/Sketch.png', link: 'https://www.sketch.com/' }
                 ]
             };
-        
+
             window.activateIcons = function (project) {
                 const iconsContainer = document.createElement('div');
                 iconsContainer.className = 'icons-container';
-        
+
                 project.icons.forEach(icon => {
                     const iconLink = document.createElement('a');
                     iconLink.href = icon.link;
                     iconLink.target = '_blank';
                     iconLink.rel = 'noopener noreferrer';
-        
+
                     const iconImg = document.createElement('img');
                     iconImg.src = icon.url;
                     iconImg.alt = 'Icon';
                     iconImg.className = 'project-icon';
                     iconImg.width = 'auto';
                     iconImg.height = 40;
-        
+
                     iconLink.appendChild(iconImg);
                     iconsContainer.appendChild(iconLink);
                 });
-        
+
                 aboutText.appendChild(iconsContainer);
             };
 
@@ -328,25 +347,31 @@ window.activateAboutSection = function (section) {
                 "0LY4FwDjGq6Z5wj8UHtIbP",
                 "3xpO8JkZJChlLu9AvfJ6VX",
                 "6e7l6mCJipZb9UoZBvtwNZ"
-            ]
+            ];
 
             tracks.forEach((track, index) => {
                 const spotifyTrack = document.createElement('div');
-                spotifyTrack.className = 'spotify-track'; 
-                spotifyTrack.innerHTML = `
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${track}?utm_source=generator" 
-                        width="100%" height="152" frameBorder="0" allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="eager">
-                    </iframe>
-                `;
+                spotifyTrack.className = 'spotify-track';
 
-                const delay = index * 0.5; 
+                const iframe = document.createElement('iframe');
+                iframe.style.borderRadius = '12px';
+                iframe.src = `https://open.spotify.com/embed/track/${track}?utm_source=generator`;
+                iframe.width = '100%';
+                iframe.height = '152';
+                iframe.frameBorder = '0';
+                iframe.allowFullscreen = true;
+                iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+                iframe.loading = 'eager';
+
+                spotifyTrack.appendChild(iframe);
+
+                const delay = index * 0.5;
                 spotifyTrack.style.animationDelay = `${delay}s`;
 
                 grid.appendChild(spotifyTrack);
             });
-
-        } else if (section === 'hobbies') {
+        }
+        else if (section === 'hobbies') {
             const icons = [
                 { url: '../Icons/Snowboarding.png', alt: "Snowboarding" },
                 { url: '../Icons/Skateboarding.png', alt: "Skateboarding" },
@@ -360,36 +385,36 @@ window.activateAboutSection = function (section) {
                 { url: '../Icons/Music.png', alt: "Music" },
                 { url: '../Icons/Gardening.png', alt: "Plant Dad" }
             ];
-        
+
             const hobbies = ['Snowboarding', 'Skateboarding', 'Biking', 'Hiking', 'Swimming', 'Traveling', 'Cooking', 'Photography', 'Drawing', 'Music', 'Plant Dad'];
-        
+
             const aboutContainer2 = document.createElement('div');
             aboutContainer2.className = 'about-container-2';
-        
+
             hobbies.forEach((hobby, index) => {
                 const hobbyDiv = document.createElement('div');
                 hobbyDiv.className = 'hobby-item';
-        
+
                 const iconElement = document.createElement('img');
                 iconElement.src = icons[index].url;
                 iconElement.alt = icons[index].alt;
                 iconElement.className = 'hobby-icon';
-        
+
                 const textElement = document.createElement('p');
                 textElement.textContent = hobby;
-        
+
                 hobbyDiv.appendChild(iconElement);
                 hobbyDiv.appendChild(textElement);
-        
-                const randomDelay = Math.random() * 2; 
-        
+
+                const randomDelay = Math.random() * 2;
+
                 hobbyDiv.style.animationDelay = `${randomDelay}s`;
-        
+
                 aboutContainer2.appendChild(hobbyDiv);
             });
-        
+
             grid.appendChild(aboutContainer2);
-        }            
+        }
     }, 100);
 };
 
