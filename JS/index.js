@@ -375,6 +375,7 @@ window.activateAboutSection = function (section) {
             const icons = [
                 { url: '../Icons/Snowboarding.png', alt: "Snowboarding" },
                 { url: '../Icons/Skateboarding.png', alt: "Skateboarding" },
+                { url: '../Icons/Sail.png', alt: "Sailing" },
                 { url: '../Icons/Biking.png', alt: "Biking" },
                 { url: '../Icons/Hiking.png', alt: "Hiking" },
                 { url: '../Icons/Swimming.png', alt: "Swimming" },
@@ -386,7 +387,7 @@ window.activateAboutSection = function (section) {
                 { url: '../Icons/Gardening.png', alt: "Plant Dad" }
             ];
 
-            const hobbies = ['Snowboarding', 'Skateboarding', 'Biking', 'Hiking', 'Swimming', 'Traveling', 'Cooking', 'Photography', 'Drawing', 'Music', 'Plant Dad'];
+            const hobbies = ['Snowboarding', 'Skateboarding', 'Sailing', 'Biking', 'Hiking', 'Swimming', 'Traveling', 'Cooking', 'Photography', 'Drawing', 'Music', 'Plant Dad'];
 
             const aboutContainer2 = document.createElement('div');
             aboutContainer2.className = 'about-container-2';
