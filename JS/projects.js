@@ -7,6 +7,7 @@ export const projects = {
             fullScreenImage: '../Images/Portland-logo.png',
             images: [
                 { url: '../Images/Portland.jpg', alt: 'City of Portland' },
+                { url: '../Images/ESL-Dashboard.png', alt: 'ESL Dashboard UI' },
                 { url: '../Images/Notifications.png', alt: 'Notifications UI' },
                 { url: '../Images/Post.png', alt: 'Create a post UI'}
             ],

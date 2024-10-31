@@ -102,6 +102,11 @@ window.showPortlandOverlay = function (project) {
         imgElement2.classList.add('quala-figma-img');
         imgElement2.src = project.images[2].url;
         videoContainer.appendChild(imgElement2);
+
+        const imgElement3 = document.createElement('img');
+        imgElement3.classList.add('quala-figma-img');
+        imgElement3.src = project.images[3].url;
+        videoContainer.appendChild(imgElement3);
     }
 
     overlay.style.display = 'flex';
