@@ -343,9 +343,9 @@ window.activateAboutSection = function (section) {
                 "1xhkbc481N3PiE28jj4pmN",
                 "2H30WL3exSctlDC9GyRbD4",
                 "5B2mJIk8yso3ugyvfHR62A",
-                "3KfbEIOC7YIv90FIfNSZpo",
+                "4Z3Mmn6cIeuKprHQyyAbXQ",
                 "0LY4FwDjGq6Z5wj8UHtIbP",
-                "3xpO8JkZJChlLu9AvfJ6VX",
+                "1juFn2eqd74iTPl0RyYRiX",
                 "6e7l6mCJipZb9UoZBvtwNZ"
             ];
 
