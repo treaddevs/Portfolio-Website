@@ -256,7 +256,7 @@ window.activateAboutSection = function (section) {
             bioParagraph.className = 'bio';
 
             const resumeLink = document.createElement('a');
-            resumeLink.href = '../Documents/Resume 2024.pdf';
+            resumeLink.href = '../Documents/Resume.pdf';
             resumeLink.target = '_blank';
             resumeLink.rel = 'noopener noreferrer';
             resumeLink.textContent = 'View Resume';

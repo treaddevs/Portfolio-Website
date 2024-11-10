@@ -29,6 +29,7 @@ export const projects = {
                 { url: '../Images/boredom-blaster-head-orange.jpg', alt: 'The Boredom Blaster Logo Orange' },
                 { url: '../Images/Botpress-Nodes.png', alt: 'Botpress Screenshot' },
                 { url: '../Images/boredom-blaser-logo.png', alt: 'The Boredom Blaster Logo' },
+                { url: '../Images/VIA-DEV.png', alt: 'Coding a component' }
             ],
             icons: [
                 { url: '../Icons/Vue.png', link: 'https://vuejs.org/' },
